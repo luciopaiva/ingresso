@@ -1,23 +1,46 @@
 
+"use strict";
+
 var
-    request = require('request'),
-    async = require('async'),
-    xml2js = require('xml2js').parseString,
+    sessions = require('./actions/sessions'),
     movies = require('./actions/movies');
 
-var
-    URL = 'http://www.ingresso.com.br/iphone/ws/IngressoService.svc/rest2/buscaRapidaEspetaculoPai?TpEvento=00000001&idCidade=00000002&IncluiCidade=S&IdGenero=00000000&flEspetaculo=S&Parceria=&idPdv=00000355&IdPais=1&versaoAppMovel=2.0.5';
-
 function main(action) {
+    var
+        params = Array.prototype.slice.call(arguments, 1);
 
     switch (action) {
         case 'movies':
-            movies();
+            console.time('fetch-movies');
+            movies(function (err, result) {
+                result.forEach(function (movie) {
+                    console.info('%s (%s)', movie.name, movie.id);
+                });
+                console.info('Total: %d', result.length);
+                console.timeEnd('fetch-movies');
+            });
+            break;
+        case 'sessions':
+            console.time('fetch-sessions');
+            sessions(params[0], function(err, result) {
+                result.forEach(function (session) {
+                    console.dir(session.sessions);
+                });
+                console.info('Total: %d', result.length);
+                console.timeEnd('fetch-sessions');
+            });
             break;
         default:
+            if (action) {
+                console.error('Unknown action "%s"', action);
+            }
             console.error('How to use:\n\tnode ingresso <action>');
     }
 
 }
 
 main.apply(null, process.argv.slice(2));
+
+function howToUse() { /*
+    node ingresso movies chappie downtown today
+*/ }

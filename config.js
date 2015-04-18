@@ -1,4 +1,6 @@
 
+"use strict";
+
 module.exports = {
     host: {
         base: 'http://www.ingresso.com.br/iphone/ws/IngressoService.svc/rest2/',
@@ -14,6 +16,22 @@ module.exports = {
                 idPdv: '00000355',
                 IdPais: '1',
                 versaoAppMovel: '2.0.5'
+            }
+        },
+        sessions: {
+            url: 'EventosBuscaRapido',
+            params: {
+                TpEvento: '00000001',
+                ExibeOffline: 'True',
+                Pai: 'S',
+                idPai: '9413',
+                idCidade: '00000002',
+                Data: '20150418',
+                Parceria: '',
+                idPdv: '00000355',
+                IdPais: '1',
+                versaoAppMovel: '2.0.5',
+                idBairro: ''
             }
         }
     }
