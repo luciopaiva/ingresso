@@ -95,7 +95,7 @@ function fetchMovies(query, next) {
                             next(null, moviesList.map(movie2model));
                         }
                     } else {
-
+                        console.info('No movies were found.');
                     }
                 } else {
                     next(xmlErr);
@@ -130,6 +130,8 @@ function checkIfExactlyMatch(movies, next) {
 
 function checkIfDateQueryIsValid(dateQuery, movie, next) {
 
+    // TODO should always get available dates and THEN check date query against the options
+
     if (dateQuery) {
         next(null, movie, dateQuery);
     } else {
@@ -154,10 +156,15 @@ function checkIfDateQueryIsValid(dateQuery, movie, next) {
 module.exports = function (movieQuery, dateQuery, theaterQuery, sessionQuery, cb) {
 
     async.waterfall([
+        // list movies and filter by movie query
         fetchMovies.bind(null, movieQuery),
+        // if there's only one movie, proceed; otherwise, show available movies and exit
         checkIfExactlyMatch,
+        // if there's a date query or if there's only one date available, proceed; otherwise, show available dates and exit
         checkIfDateQueryIsValid.bind(null, dateQuery),
+        // list sessions and select one if query matches; otherwise, list available sessions and exit
         fetchSessions.bind(null, theaterQuery, sessionQuery),
+        // display seat map for selected session
         fetchSeatMap
     ], cb);
 };

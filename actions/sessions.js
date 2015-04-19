@@ -194,6 +194,7 @@ function filterSessions(sessionQuery, event, next) {
 
 module.exports = function (theaterQuery, sessionQuery, movie, dateQuery, cb) {
 
+    // TODO this waterfall should merge into movies.js' waterfall
     async.waterfall([
         fetchEvents.bind(null, movie, dateQuery),
         filterTheater.bind(null, theaterQuery),
