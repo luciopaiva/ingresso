@@ -90,11 +90,12 @@ function event2model(event) {
     //            Setores: [Object] } ] }
 
     var
+        eid = event.$.IdEvento,
         theaterName = event.$.NmGrupo + ' - ' + event.$.NmLocal,
-        theaterCanonicalName = str.removeWhite(str.lower(str.removeDiacritics(theaterName)));
+        theaterCanonicalName = str.removeWhite(str.lower(str.removeDiacritics(eid + theaterName)));
 
     return {
-        id: event.$.IdEvento,
+        id: eid,
         movieId: event.$.IdEspetaculoPai,
         theaterName: theaterName,
         theaterCanonicalName: theaterCanonicalName,
@@ -142,7 +143,7 @@ function filterTheater(theaterQuery, events, next) {
 
         events = events.filter(function (event) {
             var
-                doc = str.removeWhite(str.lower(str.removeDiacritics(str.strOrEmpty(event.theaterName))));
+                doc = event.theaterCanonicalName;
 
             return doc.indexOf(query) != -1;
         });

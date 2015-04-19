@@ -7,18 +7,90 @@ var
     xml2js = require('xml2js').parseString,
     chalk = require('chalk'),
     url = require('../utils/url'),
+    str = require('../utils/string'),
     config = require('../config');
 
 
 function seat2model(seat) {
+    /**
+     * Seat kinds:
+     * - C: chair (cadeira)
+     * - D: chair for people with disabilities (deficiente)
+     * - P: stage (palco)
+     * - L: legend (legenda)
+     *
+     * Chair subkinds (chair kind is 'C', unless noted otherwise):
+     * - N000: common chair
+     * - T000: chair with liftable armrests
+     * - O000: chair for obese people
+     * - D000: chair for disabled people (chair kind 'D')
+     * - H000: helper for impaired person
+     * - X000: person with reduced mobility
+     */
+
+    var
+        kind = seat.$.Tipo,
+        subKind = seat.$.SubTipo,
+        cid = seat.$.IdLugar,
+        status = seat.$.Status,
+        symbol;
+
+    switch (kind) {
+        case 'C':
+        case 'D':
+
+            switch (subKind[0]) {
+                case 'N':
+                    symbol = status == 'L' ? '\u25A0' : '\u25A1';
+                    break;
+                case 'T':
+                    symbol = '\u2665';
+                    break;
+                case 'O':
+                    symbol = 'B';
+                    break;
+                case 'D':
+                    symbol = '\u267F';
+                    break;
+                case 'X':
+                    symbol = 'R';
+                    break;
+                case 'H':
+                    symbol = 'H';
+                    break;
+                default:
+                    symbol = subKind[0];
+            }
+
+            switch (status) {
+                case 'L':
+                    symbol = chalk.green(symbol);
+                    break;
+                case 'B':
+                case 'O':
+                    symbol = chalk.red(symbol);
+                    break;
+                default:
+                    symbol = chalk.yellow(status);
+            }
+            break;
+        case 'P':
+            symbol = chalk.gray(' ');
+            break;
+        case 'L':
+            symbol = chalk.blue(cid);
+            break;
+        default:
+    }
 
     return {
-        id: seat.$.IdLugar,
+        id: cid,
         line: parseInt(seat.$.Linha, 10) - 1,
         column: parseInt(seat.$.Coluna, 10) - 1,
-        status: seat.$.Status,
-        kind: seat.$.Tipo,
-        subKind: seat.$.SubTipo
+        status: status,
+        kind: kind,
+        subKind: subKind,
+        symbol: symbol
     };
 }
 
@@ -95,32 +167,29 @@ function createMap(width, height) {
 
 function displaySeats(seats, next) {
     var
+        columnsLabels = [],
         bounds,
-        map,
-        kinds = {};
+        map;
 
     bounds = findMapBounds(seats);
     map = createMap(bounds.lines, bounds.columns);
 
-    seats.forEach(function (seat) {
-        var stat = seat.status;
-        kinds[seat.kind] = true;
+    for (var i = 0; i < bounds.columns; i++) {
+        columnsLabels[i] = '  ';
+    }
 
-        switch (seat.kind) {
-            case 'L':
-                map[seat.line][seat.column] = chalk.blue(seat.id);
-                break;
-            case 'C':
-            case 'D':
-                map[seat.line][seat.column] = stat === 'L' ? chalk.green(seat.kind) : chalk.red(stat);
-                break;
-            default:
-                map[seat.line][seat.column] = chalk.gray(seat.kind);
+    seats.forEach(function (seat) {
+        var
+            cid = str.onlyNumbers(seat.id);
+        if (columnsLabels[seat.column] === '  ' && cid) {
+            columnsLabels[seat.column] = (cid.length != 2 ? '0' + cid : cid) + '';
         }
+        map[seat.line][seat.column] = seat.symbol;
     });
 
-    console.info('Seat kinds: %s', Object.keys(kinds).join(', '));
     console.info('Seat map:');
+    console.info('\t' + chalk.blue(columnsLabels.map(function (l) { return l[0]; }).join(' ')));
+    console.info('\t' + chalk.blue(columnsLabels.map(function (l) { return l[1]; }).join(' ')));
     map.forEach(function (line, i) {
         var
             lineStr = '\t';
@@ -130,6 +199,20 @@ function displaySeats(seats, next) {
         console.info('%s', lineStr);
     });
 
+    next(null);
+}
+
+function displayLegend(next) {
+
+    console.info('Legend:');
+    console.info('\t%s seat (free)', chalk.green('\u25A0'));
+    console.info('\t%s seat (taken)', chalk.red('\u25A1'));
+    console.info('\t\u2665 seat with liftable armrests');
+    console.info('\tB seat for pregnant / obese person');
+    console.info('\tH seat for companion of person with disability');
+    console.info('\t\u267F reserved for wheelchair');
+    console.info('\tE unknown seat - maybe narrow?');
+
     next();
 }
 
@@ -137,6 +220,7 @@ module.exports = function (session, cb) {
 
     async.waterfall([
         fetchAvailableDates.bind(null, session),
-        displaySeats
+        displaySeats,
+        displayLegend
     ], cb);
 };

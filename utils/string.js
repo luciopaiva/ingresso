@@ -10,7 +10,7 @@ function strOrEmpty(str) {
 }
 
 function removeWhite(str) {
-    return str.replace(/[\s\n\t]+/, '');
+    return str.replace(/[\s\n\t]+/g, '');
 }
 
 function lower(str) {
