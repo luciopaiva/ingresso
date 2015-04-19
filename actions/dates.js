@@ -3,7 +3,6 @@
 
 var
     request = require('request'),
-    async = require('async'),
     xml2js = require('xml2js').parseString,
     url = require('../utils/url'),
     config = require('../config');
@@ -40,9 +39,32 @@ function fetchAvailableDates(movie, next) {
 
 }
 
-module.exports = function (movie, cb) {
+function checkIfDateQueryMatches(dateQuery, movie, availableDates, next) {
 
-    async.waterfall([
-        fetchAvailableDates.bind(null, movie)
-    ], cb);
+    if (availableDates.length == 1) {
+        next(null, movie, availableDates[0]);
+    } else {
+        console.info('Available dates:');
+        availableDates.forEach(function (date) {
+            console.info('\t%s', date);
+        });
+
+        if (dateQuery) {
+            availableDates = availableDates.filter(function (date) {
+                return date.indexOf(dateQuery) != -1;
+            });
+        }
+
+        if (availableDates.length == 1) {
+            console.info('Selected date "%s".', availableDates[0]);
+            next(null, movie, availableDates[0]);
+        } else {
+            next('Please choose one of the dates above to continue.');
+        }
+    }
+}
+
+module.exports = {
+    fetchAvailableDates: fetchAvailableDates,
+    checkIfDateQueryMatches: checkIfDateQueryMatches
 };

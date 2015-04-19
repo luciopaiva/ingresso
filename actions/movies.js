@@ -5,7 +5,8 @@ var
     async = require('async'),
     xml2js = require('xml2js').parseString,
     fetchSessions = require('./sessions'),
-    fetchMovieDates = require('./dates'),
+    fetchMovieDates = require('./dates').fetchAvailableDates,
+    checkIfDateQueryMatches = require('./dates').checkIfDateQueryMatches,
     fetchSeatMap = require('./seatmap'),
     url = require('../utils/url'),
     str = require('../utils/string'),
@@ -126,31 +127,6 @@ function checkIfMovieQueryMatches(query, movies, next) {
         });
         console.info('Please narrow your search.');
         next(true);
-    }
-}
-
-function checkIfDateQueryMatches(dateQuery, movie, availableDates, next) {
-
-    if (availableDates.length == 1) {
-        next(null, movie, availableDates[0]);
-    } else {
-        console.info('Available dates:');
-        availableDates.forEach(function (date) {
-            console.info('\t%s', date);
-        });
-
-        if (dateQuery) {
-            availableDates = availableDates.filter(function (date) {
-                return date.indexOf(dateQuery) != -1;
-            });
-        }
-
-        if (availableDates.length == 1) {
-            console.info('Selected date "%s".', availableDates[0]);
-            next(null, movie, availableDates[0]);
-        } else {
-            next('Please choose one of the dates above to continue.');
-        }
     }
 }
 
