@@ -194,12 +194,6 @@ function filterSessions(sessionQuery, event, next) {
 
 module.exports = function (theaterQuery, sessionQuery, movie, dateQuery, cb) {
 
-    //console.info('> theaterQuery', theaterQuery);
-    //console.info('> sessionQuery', sessionQuery);
-    //console.info('> movie', movie);
-    //console.info('> dateQuery', dateQuery);
-    //console.info('> callback', cb);
-
     async.waterfall([
         fetchEvents.bind(null, movie, dateQuery),
         filterTheater.bind(null, theaterQuery),
