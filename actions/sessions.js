@@ -150,7 +150,8 @@ function filterTheater(theaterQuery, events, next) {
 
         console.info('Available theaters:');
         events.forEach(function (event) {
-            console.info('\t%s', event.where);
+            console.info('\t%s (#%s)', event.where, event.id);
+            printSessions(event.sessions);
         });
         next('Please select a theater to continue.');
     } else {
@@ -159,24 +160,31 @@ function filterTheater(theaterQuery, events, next) {
     }
 }
 
+function printSessions(sessions) {
+    var
+        sessionsStr = [];
+
+    sessions.forEach(function (session) {
+        var
+            soldOut = session.soldOut ? ' (esgotado)' : '';
+        sessionsStr.push(session.time + soldOut);
+    });
+
+    console.info('\t\t%s', sessionsStr.join(', '));
+}
+
 function filterSessions(sessionQuery, event, next) {
     var
         session,
-        sessions = event.sessions,
-        sessionsStr = [];
+        sessions = event.sessions;
 
     console.info('\t%s', event.where);
 
     if (sessions.length == 0) {
         console.info('No sessions available for the given query. Broaden your search and try again.');
     } else if (sessions.length > 1) {
-        sessions.forEach(function (session) {
-            var
-                soldOut = session.soldOut ? ' (esgotado)' : '';
-            sessionsStr.push(session.time + soldOut);
-        });
 
-        console.info('\t\t%s', sessionsStr.join(', '));
+        printSessions(event.sessions);
 
         if (sessionQuery) {
             sessionQuery = str.onlyNumbers(sessionQuery);
