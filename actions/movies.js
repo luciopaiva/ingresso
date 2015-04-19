@@ -113,7 +113,7 @@ function checkIfMovieQueryMatches(query, movies, next) {
     if (movies.length == 1) {
 
         chosenMovie = movies[0];
-        console.info('%s (%s)', chosenMovie.name, chosenMovie.originalName);
+        console.info('%s %s', chosenMovie.name, str.enclose(chosenMovie.originalName));
         next(null, chosenMovie);
     } else {
 
@@ -122,7 +122,7 @@ function checkIfMovieQueryMatches(query, movies, next) {
             return (a.canonicalName < b.canonicalName) ? -1 : 1;
         });
         movies.forEach(function (movie) {
-            console.info('\t%s %s', movie.name, movie.originalName ? '(' + movie.originalName + ')' : '');
+            console.info('\t%s %s', movie.name, str.enclose(movie.originalName));
         });
         console.info('Please narrow your search.');
         next(true);

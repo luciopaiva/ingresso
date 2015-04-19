@@ -25,10 +25,20 @@ function onlyNumbers(str) {
     return str.replace(/\D/g, '');
 }
 
+function enclose(open, str, close) {
+    if (!str && !close) {
+        str = open;
+        open = '(';
+        close = ')';
+    }
+    return str ? open + str + close : '';
+}
+
 module.exports = {
     strOrEmpty: strOrEmpty,
     removeWhite: removeWhite,
     lower: lower,
     removeDiacritics: remDiacritics,
-    onlyNumbers: onlyNumbers
+    onlyNumbers: onlyNumbers,
+    enclose: enclose
 };
