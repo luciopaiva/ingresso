@@ -148,6 +148,7 @@ function filterTheater(theaterQuery, events, next) {
 
     } else if (events.length > 1) {
 
+        console.info('Available theaters:');
         events.forEach(function (event) {
             console.info('\t%s', event.where);
         });
@@ -166,14 +167,6 @@ function filterSessions(sessionQuery, event, next) {
 
     console.info('\t%s', event.where);
 
-    if (sessionQuery) {
-        sessionQuery = str.onlyNumbers(sessionQuery);
-
-        sessions = sessions.filter(function (session) {
-            return str.onlyNumbers(session.time).indexOf(sessionQuery) != -1;
-        });
-    }
-
     if (sessions.length == 0) {
         console.info('No sessions available for the given query. Broaden your search and try again.');
     } else if (sessions.length > 1) {
@@ -184,7 +177,23 @@ function filterSessions(sessionQuery, event, next) {
         });
 
         console.info('\t\t%s', sessionsStr.join(', '));
-        next('Please choose a theater and a session to continue.');
+
+        if (sessionQuery) {
+            sessionQuery = str.onlyNumbers(sessionQuery);
+
+            sessions = sessions.filter(function (session) {
+                return str.onlyNumbers(session.time).indexOf(sessionQuery) != -1;
+            });
+        }
+
+        if (sessions.length == 1) {
+            session = sessions[0];
+            console.info('Selected session at %s (#%s)', session.time, session.id);
+            next(null, session);
+        } else {
+            next('Please choose a theater and a session to continue.');
+        }
+
     } else {
         session = sessions[0];
         console.info('\t\tSelected session at %s (#%s)', session.time, session.id);

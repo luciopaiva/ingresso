@@ -5,7 +5,7 @@ var
     async = require('async'),
     xml2js = require('xml2js').parseString,
     fetchSessions = require('./sessions'),
-    fetchAvailableDates = require('./dates'),
+    fetchMovieDates = require('./dates'),
     fetchSeatMap = require('./seatmap'),
     url = require('../utils/url'),
     str = require('../utils/string'),
@@ -108,7 +108,7 @@ function fetchMovies(query, next) {
     });
 }
 
-function checkIfExactlyMatch(movies, next) {
+function checkIfMovieQueryMatches(movies, next) {
     var
         chosenMovie;
 
@@ -128,28 +128,28 @@ function checkIfExactlyMatch(movies, next) {
     }
 }
 
-function checkIfDateQueryIsValid(dateQuery, movie, next) {
+function checkIfDateQueryMatches(dateQuery, movie, availableDates, next) {
 
-    // TODO should always get available dates and THEN check date query against the options
-
-    if (dateQuery) {
-        next(null, movie, dateQuery);
+    if (availableDates.length == 1) {
+        next(null, movie, availableDates[0]);
     } else {
-        fetchAvailableDates(movie, function (err, availableDates) {
-            if (err) {
-                next(err);
-            } else {
-                console.info('Available dates:');
-                availableDates.forEach(function (date) {
-                    console.info('\t%s', date);
-                });
-                if (availableDates.length == 1) {
-                    next(null, movie, availableDates[0]);
-                } else {
-                    next('Please choose one of the dates above to continue.');
-                }
-            }
+        console.info('Available dates:');
+        availableDates.forEach(function (date) {
+            console.info('\t%s', date);
         });
+
+        if (dateQuery) {
+            availableDates = availableDates.filter(function (date) {
+                return date.indexOf(dateQuery) != -1;
+            });
+        }
+
+        if (availableDates.length == 1) {
+            console.info('Selected date "%s".', availableDates[0]);
+            next(null, movie, availableDates[0]);
+        } else {
+            next('Please choose one of the dates above to continue.');
+        }
     }
 }
 
@@ -159,9 +159,11 @@ module.exports = function (movieQuery, dateQuery, theaterQuery, sessionQuery, cb
         // list movies and filter by movie query
         fetchMovies.bind(null, movieQuery),
         // if there's only one movie, proceed; otherwise, show available movies and exit
-        checkIfExactlyMatch,
+        checkIfMovieQueryMatches,
+        // list available dates for the selected movie
+        fetchMovieDates,
         // if there's a date query or if there's only one date available, proceed; otherwise, show available dates and exit
-        checkIfDateQueryIsValid.bind(null, dateQuery),
+        checkIfDateQueryMatches.bind(null, dateQuery),
         // list sessions and select one if query matches; otherwise, list available sessions and exit
         fetchSessions.bind(null, theaterQuery, sessionQuery),
         // display seat map for selected session

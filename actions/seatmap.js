@@ -34,12 +34,15 @@ function fetchAvailableDates(session, next) {
 
             xml2js(body, function (xmlErr, result) {
                 var
-                    planta = result.PlantaResponse.PlantaResult[0].Planta[0],
-                    lines = parseInt(planta.$.Linhas, 10),
-                    columns = parseInt(planta.$.Colunas, 10);
+                    planta = result.PlantaResponse.PlantaResult[0].Planta[0];
+
+                // The parameters "Linhas" and "Colunas" are not trustable. Have to calculate them manually.
+                //var
+                //    lines = parseInt(planta.$.Linhas, 10),
+                //    columns = parseInt(planta.$.Colunas, 10);
 
                 if (!xmlErr) {
-                    next(null, lines, columns, planta.Cadeira.map(seat2model));
+                    next(null, planta.Cadeira.map(seat2model));
                 } else {
                     next(xmlErr);
                 }
@@ -52,22 +55,52 @@ function fetchAvailableDates(session, next) {
 
 }
 
-function displaySeats(lines, columns, seats, next) {
+function findMapBounds(seats) {
+    var
+        lines = 0, columns = 0;
+
+    seats.forEach(function (seat) {
+        if (seat.line > lines) {
+            lines = seat.line;
+        }
+        if (seat.column > columns) {
+            columns = seat.column;
+        }
+    });
+
+    lines++;
+    columns++;
+
+    return {
+        lines: lines,
+        columns: columns
+    };
+}
+
+function createMap(width, height) {
     var
         i, j,
-        map = [],
-        kinds = {};
+        map = [];
 
-    for (i = 0; i <= lines; i++) {
+    for (i = 0; i < width; i++) {
         map[i] = [];
 
-        for (j = 0; j <= columns; j++) {
+        for (j = 0; j < height; j++) {
             map[i][j] = chalk.gray('_');
         }
     }
 
-    console.info('Lines: %d', lines);
-    console.info('Columns: %d', columns);
+    return map;
+}
+
+function displaySeats(seats, next) {
+    var
+        bounds,
+        map,
+        kinds = {};
+
+    bounds = findMapBounds(seats);
+    map = createMap(bounds.lines, bounds.columns);
 
     seats.forEach(function (seat) {
         var stat = seat.status;
@@ -90,7 +123,7 @@ function displaySeats(lines, columns, seats, next) {
     console.info('Seat map:');
     map.forEach(function (line, i) {
         var
-            lineStr = '';
+            lineStr = '\t';
         line.forEach(function (column, j) {
             lineStr += map[i][j] + ' ';
         });

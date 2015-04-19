@@ -7,12 +7,15 @@ var
 
 
 function caseMovies(movieFilter, dateFilter, theaterFilter, sessionQuery) {
-    console.time('fetch-movies');
+    var
+        label = 'Total elapsed time';
+
+    console.time(label);
     movies(movieFilter, dateFilter, theaterFilter, sessionQuery, function (err) {
         if (err) {
             console.error(err);
         }
-        console.timeEnd('fetch-movies');
+        console.timeEnd(label);
     });
 }
 

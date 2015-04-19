@@ -27,7 +27,7 @@ function fetchAvailableDates(movie, next) {
             xml2js(body, function (xmlErr, result) {
 
                 if (!xmlErr) {
-                    next(null, result.DatasHorasResponse.DatasHorasResult[0].DataHora.map(date2model));
+                    next(null, movie, result.DatasHorasResponse.DatasHorasResult[0].DataHora.map(date2model));
                 } else {
                     next(xmlErr);
                 }
