@@ -141,7 +141,11 @@ function checkIfDateQueryIsValid(dateQuery, movie, next) {
                 availableDates.forEach(function (date) {
                     console.info('\t%s', date);
                 });
-                next('Please choose one of the dates above to continue.');
+                if (availableDates.length == 1) {
+                    next(null, movie, availableDates[0]);
+                } else {
+                    next('Please choose one of the dates above to continue.');
+                }
             }
         });
     }
