@@ -133,14 +133,17 @@ function checkIfMovieQueryMatches(query, movies, next) {
 module.exports = function (movieQuery, dateQuery, theaterQuery, sessionQuery, cb) {
 
     async.waterfall([
+
         // list movies
         fetchMovies,
         // filter movies and if there's only one movie, proceed; otherwise, show available movies and exit
         checkIfMovieQueryMatches.bind(null, movieQuery),
+
         // list available dates for the selected movie
         fetchMovieDates,
         // if there's a date query or if there's only one date available, proceed; otherwise, show available dates and exit
         checkIfDateQueryMatches.bind(null, dateQuery),
+
         // list sessions and select one if query matches; otherwise, list available sessions and exit
         fetchSessions.bind(null, theaterQuery, sessionQuery),
         // display seat map for selected session

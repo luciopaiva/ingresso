@@ -51,7 +51,8 @@ function session2model(session) {
         id: session.$.IdSessao,
         soldOut: session.$.Esgotado === 'S',
         date: session.DtSessao[0],
-        time: session.Horario[0]
+        time: session.Horario[0],
+        isOriginalSound: str.lower(str.removeDiacritics(str.strOrEmpty(session.$.NmTpLegenda))).indexOf('dublado') == -1
     };
 }
 
@@ -171,8 +172,8 @@ function printSessions(sessions) {
 
     sessions.forEach(function (session) {
         var
-            soldOut = session.soldOut ? ' (esgotado)' : '';
-        sessionsStr.push(session.time + soldOut);
+            originalSound = !session.isOriginalSound ? ' (dub)' : '';
+        sessionsStr.push(session.time + originalSound);
     });
 
     console.info('\t\t%s', sessionsStr.join(', '));
