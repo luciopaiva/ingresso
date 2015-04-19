@@ -72,7 +72,18 @@ function displaySeats(lines, columns, seats, next) {
     seats.forEach(function (seat) {
         var stat = seat.status;
         kinds[seat.kind] = true;
-        map[seat.line][seat.column] = stat === 'L' ? chalk.green(stat) : chalk.red(stat);
+
+        switch (seat.kind) {
+            case 'L':
+                map[seat.line][seat.column] = chalk.blue(seat.id);
+                break;
+            case 'C':
+            case 'D':
+                map[seat.line][seat.column] = stat === 'L' ? chalk.green(seat.kind) : chalk.red(stat);
+                break;
+            default:
+                map[seat.line][seat.column] = chalk.gray(seat.kind);
+        }
     });
 
     console.info('Seat kinds: %s', Object.keys(kinds).join(', '));
