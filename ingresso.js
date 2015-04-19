@@ -2,8 +2,19 @@
 "use strict";
 
 var
-    sessions = require('./actions/sessions'),
+    //sessions = require('./actions/sessions'),
     movies = require('./actions/movies');
+
+
+function caseMovies(movieFilter, dateFilter, theaterFilter, sessionQuery) {
+    console.time('fetch-movies');
+    movies(movieFilter, dateFilter, theaterFilter, sessionQuery, function (err) {
+        if (err) {
+            console.error(err);
+        }
+        console.timeEnd('fetch-movies');
+    });
+}
 
 function main(action) {
     var
@@ -11,25 +22,18 @@ function main(action) {
 
     switch (action) {
         case 'movies':
-            console.time('fetch-movies');
-            movies(function (err, result) {
-                result.forEach(function (movie) {
-                    console.info('%s (%s)', movie.name, movie.id);
-                });
-                console.info('Total: %d', result.length);
-                console.timeEnd('fetch-movies');
-            });
+            caseMovies(params[0], params[1], params[2], params[3]);
             break;
-        case 'sessions':
-            console.time('fetch-sessions');
-            sessions(params[0], function(err, result) {
-                result.forEach(function (session) {
-                    console.dir(session.sessions);
-                });
-                console.info('Total: %d', result.length);
-                console.timeEnd('fetch-sessions');
-            });
-            break;
+        //case 'sessions':
+        //    console.time('fetch-sessions');
+        //    sessions(params[0], function(err, result) {
+        //        result.forEach(function (session) {
+        //            console.dir(session.sessions);
+        //        });
+        //        console.info('Total: %d', result.length);
+        //        console.timeEnd('fetch-sessions');
+        //    });
+        //    break;
         default:
             if (action) {
                 console.error('Unknown action "%s"', action);
@@ -42,5 +46,5 @@ function main(action) {
 main.apply(null, process.argv.slice(2));
 
 function howToUse() { /*
-    node ingresso movies chappie downtown today
+    node ingresso movies chappie today downtown
 */ }

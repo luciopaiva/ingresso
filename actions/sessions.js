@@ -6,10 +6,9 @@ var
     async = require('async'),
     xml2js = require('xml2js').parseString,
     url = require('../utils/url'),
+    str = require('../utils/string'),
     config = require('../config');
 
-var
-    URL = url.compose(config.host.base, config.host.sessions.url, config.host.sessions.params);
 
 function session2model(session) {
     //{ '$':
@@ -51,8 +50,8 @@ function session2model(session) {
     return {
         id: session.$.IdSessao,
         soldOut: session.$.Esgotado === 'S',
-        date: session.DtSessao,
-        time: session.Horario
+        date: session.DtSessao[0],
+        time: session.Horario[0]
     };
 }
 
@@ -97,24 +96,113 @@ function event2model(event) {
     };
 }
 
-module.exports = function (movieId, cb) {
+function fetchEvents(movie, dateQuery, next) {
+    var
+        address = url.compose(config.host.base, config.host.sessions.url, config.host.sessions.params, {
+            'movieId': movie.id,
+            'date': dateQuery
+        });
 
-    request(URL, function (requestErr, response, body) {
+    request(address, function (requestErr, response, body) {
 
         if (!requestErr && response.statusCode === 200) {
 
             xml2js(body, function (xmlErr, result) {
 
                 if (!xmlErr) {
-                    cb(null, result.EventosResponse.EventosResult[0].ProgramacaoEventos.map(event2model));
+                    next(null, result.EventosResponse.EventosResult[0].ProgramacaoEventos.map(event2model));
                 } else {
-                    cb(xmlErr);
+                    next(xmlErr);
                 }
             });
 
         } else {
-            cb(requestErr);
+            if (requestErr) {
+                next(requestErr);
+            } else {
+                next(response.statusCode);
+            }
         }
     });
+}
 
+function filterTheater(theaterQuery, events, next) {
+    var
+        query;
+
+    if (theaterQuery) {
+
+        query = str.removeWhite(str.lower(str.removeDiacritics(theaterQuery)));
+
+        events = events.filter(function (event) {
+            var
+                doc = str.removeWhite(str.lower(str.removeDiacritics(str.strOrEmpty(event.where))));
+
+            return doc.indexOf(query) != -1;
+        });
+    }
+
+    if (events.length == 0) {
+
+        next('No theaters are screening this movie for the given query.');
+
+    } else if (events.length > 1) {
+
+        events.forEach(function (event) {
+            console.info('\t%s', event.where);
+        });
+        next('Please select a theater to continue.');
+    } else {
+
+        next(null, events[0]);
+    }
+}
+
+function filterSessions(sessionQuery, event, next) {
+    var
+        session,
+        sessions = event.sessions,
+        sessionsStr = [];
+
+    console.info('\t%s', event.where);
+
+    if (sessionQuery) {
+        sessionQuery = str.onlyNumbers(sessionQuery);
+
+        sessions = sessions.filter(function (session) {
+            return str.onlyNumbers(session.time).indexOf(sessionQuery) != -1;
+        });
+    }
+
+    if (sessions.length == 0) {
+        console.info('No sessions available for the given query. Broaden your search and try again.');
+    } else if (sessions.length > 1) {
+        sessions.forEach(function (session) {
+            var
+                soldOut = session.soldOut ? ' (esgotado)' : '';
+            sessionsStr.push(session.time + soldOut);
+        });
+
+        console.info('\t\t%s', sessionsStr.join(', '));
+        next('Please choose a theater and a session to continue.');
+    } else {
+        session = sessions[0];
+        console.info('\t\tSelected session at %s (#%s)', session.time, session.id);
+        next(null, session);
+    }
+}
+
+module.exports = function (theaterQuery, sessionQuery, movie, dateQuery, cb) {
+
+    //console.info('> theaterQuery', theaterQuery);
+    //console.info('> sessionQuery', sessionQuery);
+    //console.info('> movie', movie);
+    //console.info('> dateQuery', dateQuery);
+    //console.info('> callback', cb);
+
+    async.waterfall([
+        fetchEvents.bind(null, movie, dateQuery),
+        filterTheater.bind(null, theaterQuery),
+        filterSessions.bind(null, sessionQuery)
+    ], cb);
 };

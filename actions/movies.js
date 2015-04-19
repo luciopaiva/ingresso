@@ -1,17 +1,22 @@
-
 "use strict";
 
 var
     request = require('request'),
     async = require('async'),
     xml2js = require('xml2js').parseString,
+    fetchSessions = require('./sessions'),
+    fetchAvailableDates = require('./dates'),
+    fetchSeatMap = require('./seatmap'),
     url = require('../utils/url'),
+    str = require('../utils/string'),
     config = require('../config');
 
 var
     URL = url.compose(config.host.base, config.host.movies.url, config.host.movies.params);
 
 function movie2model(movie) {
+    // Raw movie description from XML:
+    //
     //{ '$':
     //    { IdEspetaculo: '9143',
     //        NmEspetaculo: 'A série Divergente - Insurgente',
@@ -39,29 +44,116 @@ function movie2model(movie) {
         cast: movie.$.Elenco,
         director: movie.$.Diretoria,
         duration: movie.$.Duracao,
-        originalName: movie.$.NomeOriginal,
+        originalName: (movie.$.NomeOriginal != movie.$.NmEspetaculo && movie.$.NomeOriginal) || null,
         image: movie.$.Figura
     };
 }
 
-module.exports = function (cb) {
+/**
+ * Searches for query in movie's name.
+ * @param query
+ * @param candidateMovie
+ * @returns {boolean}
+ */
+function movieFilter(query, candidateMovie) {
+    var
+        doc;
+
+    doc = str.strOrEmpty(candidateMovie.$.NmEspetaculo) + str.strOrEmpty(candidateMovie.$.NomeOriginal);
+    doc = str.lower(str.removeWhite(str.removeDiacritics(doc)));
+
+    query = str.lower(str.removeWhite(str.removeDiacritics(query)));
+
+    return doc.indexOf(query) != -1;
+}
+
+/**
+ * Fetches the complete movie list and returns the entire collection or a subset if a query was specified.
+ *
+ * @param query a string to match against movies' title
+ * @param next function to be called when the movie list is ready
+ */
+function fetchMovies(query, next) {
 
     request(URL, function (requestErr, response, body) {
 
         if (!requestErr && response.statusCode === 200) {
 
             xml2js(body, function (xmlErr, result) {
+                var
+                    moviesList,
+                    filterByQuery = movieFilter.bind(null, query);
 
                 if (!xmlErr) {
-                    cb(null, result.EspetaculosPaiResponse.EspetaculosPaiResult[0].EspetaculoPai.map(movie2model));
+                    moviesList = result.EspetaculosPaiResponse.EspetaculosPaiResult[0].EspetaculoPai;
+
+                    if (moviesList) {
+
+                        if (query) {
+                            next(null, moviesList.filter(filterByQuery).map(movie2model));
+                        } else {
+                            next(null, moviesList.map(movie2model));
+                        }
+                    } else {
+
+                    }
                 } else {
-                    cb(xmlErr);
+                    next(xmlErr);
                 }
             });
 
         } else {
-            cb(requestErr);
+            next(requestErr);
         }
     });
+}
 
+function checkIfExactlyMatch(movies, next) {
+    var
+        chosenMovie;
+
+    if (movies.length == 1) {
+
+        chosenMovie = movies[0];
+        console.info(chosenMovie.name);
+        next(null, chosenMovie);
+    } else {
+
+        console.info('More than one movie was found matching your query:');
+        movies.forEach(function (movie) {
+            console.info('\t%s %s', movie.name, movie.originalName ? '(' + movie.originalName + ')' : '');
+        });
+        console.info('Please narrow your search.');
+        next(true);
+    }
+}
+
+function checkIfDateQueryIsValid(dateQuery, movie, next) {
+
+    if (dateQuery) {
+        next(null, movie, dateQuery);
+    } else {
+        fetchAvailableDates(movie, function (err, availableDates) {
+            if (err) {
+                next(err);
+            } else {
+                console.info('Available dates:');
+                availableDates.forEach(function (date) {
+                    console.info('\t%s', date);
+                });
+                next('Please choose one of the dates above to continue.');
+            }
+        });
+    }
+}
+
+module.exports = function (movieQuery, dateQuery, theaterQuery, sessionQuery, cb) {
+
+    async.waterfall([
+        fetchMovies.bind(null, movieQuery),
+        checkIfExactlyMatch,
+        checkIfDateQueryIsValid.bind(null, dateQuery),
+        fetchSessions.bind(null, theaterQuery, sessionQuery),
+        fetchSeatMap
+    ], cb);
 };
