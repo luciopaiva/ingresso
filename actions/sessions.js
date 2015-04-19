@@ -88,10 +88,15 @@ function event2model(event) {
     //            Horario: [Object],
     //            Setores: [Object] } ] }
 
+    var
+        theaterName = event.$.NmGrupo + ' - ' + event.$.NmLocal,
+        theaterCanonicalName = str.removeWhite(str.lower(str.removeDiacritics(theaterName)));
+
     return {
         id: event.$.IdEvento,
         movieId: event.$.IdEspetaculoPai,
-        where: event.$.NmGrupo + ' - ' + event.$.NmLocal,
+        theaterName: theaterName,
+        theaterCanonicalName: theaterCanonicalName,
         sessions: event.Sessao.map(session2model)
     };
 }
@@ -136,7 +141,7 @@ function filterTheater(theaterQuery, events, next) {
 
         events = events.filter(function (event) {
             var
-                doc = str.removeWhite(str.lower(str.removeDiacritics(str.strOrEmpty(event.where))));
+                doc = str.removeWhite(str.lower(str.removeDiacritics(str.strOrEmpty(event.theaterName))));
 
             return doc.indexOf(query) != -1;
         });
@@ -150,7 +155,7 @@ function filterTheater(theaterQuery, events, next) {
 
         console.info('Available theaters:');
         events.forEach(function (event) {
-            console.info('\t%s (#%s)', event.where, event.id);
+            console.info('\t%s (#%s)', event.theaterName, event.id);
             printSessions(event.sessions);
         });
         next('Please select a theater to continue.');
@@ -178,7 +183,7 @@ function filterSessions(sessionQuery, event, next) {
         session,
         sessions = event.sessions;
 
-    console.info('\t%s', event.where);
+    console.info('\t%s', event.theaterName);
 
     if (sessions.length == 0) {
         console.info('No sessions available for the given query. Broaden your search and try again.');

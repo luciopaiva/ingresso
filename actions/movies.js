@@ -36,15 +36,21 @@ function movie2model(movie) {
     //    Trailer: [ { '$': [Object] }, { '$': [Object] } ],
     //        Generos: [ { '$': [Object] } ] }
 
+    var
+        name = movie.$.NmEspetaculo,
+        originalName = (movie.$.NomeOriginal != movie.$.NmEspetaculo && movie.$.NomeOriginal) || '',
+        canonicalName = str.removeWhite(str.lower(str.removeDiacritics(name + originalName)));
+
     return {
         id: movie.$.IdEspetaculo,
-        name: movie.$.NmEspetaculo,
+        name: name,
+        canonicalName: canonicalName,
         summary: movie.$.ConteudoSinopse,
         genre: movie.$.Genero,
         cast: movie.$.Elenco,
         director: movie.$.Diretoria,
         duration: movie.$.Duracao,
-        originalName: (movie.$.NomeOriginal != movie.$.NmEspetaculo && movie.$.NomeOriginal) || null,
+        originalName: originalName || null,
         image: movie.$.Figura
     };
 }
@@ -56,24 +62,18 @@ function movie2model(movie) {
  * @returns {boolean}
  */
 function movieFilter(query, candidateMovie) {
-    var
-        doc;
-
-    doc = str.strOrEmpty(candidateMovie.$.NmEspetaculo) + str.strOrEmpty(candidateMovie.$.NomeOriginal);
-    doc = str.lower(str.removeWhite(str.removeDiacritics(doc)));
 
     query = str.lower(str.removeWhite(str.removeDiacritics(query)));
 
-    return doc.indexOf(query) != -1;
+    return candidateMovie.canonicalName.indexOf(query) != -1;
 }
 
 /**
- * Fetches the complete movie list and returns the entire collection or a subset if a query was specified.
+ * Fetches the complete movie list and returns the entire collection.
  *
- * @param query a string to match against movies' title
  * @param next function to be called when the movie list is ready
  */
-function fetchMovies(query, next) {
+function fetchMovies(next) {
 
     request(URL, function (requestErr, response, body) {
 
@@ -81,19 +81,13 @@ function fetchMovies(query, next) {
 
             xml2js(body, function (xmlErr, result) {
                 var
-                    moviesList,
-                    filterByQuery = movieFilter.bind(null, query);
+                    moviesList;
 
                 if (!xmlErr) {
                     moviesList = result.EspetaculosPaiResponse.EspetaculosPaiResult[0].EspetaculoPai;
 
                     if (moviesList) {
-
-                        if (query) {
-                            next(null, moviesList.filter(filterByQuery).map(movie2model));
-                        } else {
-                            next(null, moviesList.map(movie2model));
-                        }
+                        next(null, moviesList.map(movie2model));
                     } else {
                         console.info('No movies were found.');
                     }
@@ -108,18 +102,25 @@ function fetchMovies(query, next) {
     });
 }
 
-function checkIfMovieQueryMatches(movies, next) {
+function checkIfMovieQueryMatches(query, movies, next) {
     var
         chosenMovie;
+
+    if (query) {
+        movies = movies.filter(movieFilter.bind(null, query));
+    }
 
     if (movies.length == 1) {
 
         chosenMovie = movies[0];
-        console.info(chosenMovie.name);
+        console.info('%s (%s)', chosenMovie.name, chosenMovie.originalName);
         next(null, chosenMovie);
     } else {
 
         console.info('More than one movie was found matching your query:');
+        movies.sort(function (a, b) {
+            return (a.canonicalName < b.canonicalName) ? -1 : 1;
+        });
         movies.forEach(function (movie) {
             console.info('\t%s %s', movie.name, movie.originalName ? '(' + movie.originalName + ')' : '');
         });
@@ -156,10 +157,10 @@ function checkIfDateQueryMatches(dateQuery, movie, availableDates, next) {
 module.exports = function (movieQuery, dateQuery, theaterQuery, sessionQuery, cb) {
 
     async.waterfall([
-        // list movies and filter by movie query
-        fetchMovies.bind(null, movieQuery),
-        // if there's only one movie, proceed; otherwise, show available movies and exit
-        checkIfMovieQueryMatches,
+        // list movies
+        fetchMovies,
+        // filter movies and if there's only one movie, proceed; otherwise, show available movies and exit
+        checkIfMovieQueryMatches.bind(null, movieQuery),
         // list available dates for the selected movie
         fetchMovieDates,
         // if there's a date query or if there's only one date available, proceed; otherwise, show available dates and exit
