@@ -12,7 +12,7 @@ function caseMovies(movieFilter, dateFilter, theaterFilter, sessionQuery) {
 
     console.time(label);
     movies(movieFilter, dateFilter, theaterFilter, sessionQuery, function (err) {
-        if (err) {
+        if (err && err !== true) {
             console.error(err);
         }
         console.timeEnd(label);
