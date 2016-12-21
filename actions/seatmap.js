@@ -2,6 +2,7 @@
 "use strict";
 
 var
+    util = require('util'),
     request = require('request'),
     async = require('async'),
     xml2js = require('xml2js').parseString,
@@ -112,6 +113,11 @@ function fetchAvailableDates(session, next) {
                 //var
                 //    lines = parseInt(planta.$.Linhas, 10),
                 //    columns = parseInt(planta.$.Colunas, 10);
+
+                if (!planta.Cadeira) {
+                    xmlErr = 'Error fetching seat map:\n' +
+                        util.inspect(result.PlantaResponse.PlantaResult[0].Planta[0].DetalhesDoErro[0].DetalhesErro);
+                }
 
                 if (!xmlErr) {
                     next(null, planta.Cadeira.map(seat2model));
