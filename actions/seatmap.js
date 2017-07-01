@@ -97,38 +97,53 @@ function seat2model(seat) {
 
 function fetchAvailableDates(session, next) {
     var
-        address = url.compose(config.host.base, config.host.seatmap.url, config.host.seatmap.params, {
+        address = url.compose('https://www.ingresso.com/iphone/ws/IngressoService.svc/rest/', config.host.seatmap.url, config.host.seatmap.params, {
+            // good url! try curl
+            // https://www.ingresso.com/iphone/ws/IngressoService.svc/rest/ListarPlanta?IdSessao=52507811&idSetor=00003982&idPdv=00000355&IdPais=1&versaoAppMovel=2.4.3
             'sessionId': session.id
         });
 
+    // https://carrinho.ingresso.com/iphone/ws/IngressoService.svc/rest/ListarPlanta?IdSessao=52507811&idSetor=00003982&idPdv=00000355&IdPais=1&versaoAppMovel=2.4.3
+    // https://www.ingresso.com/iphone/ws/IngressoService.svc/rest/ListarPlanta?IdSessao=52507811&idSetor=00003982&idPdv=00000355&IdPais=1&versaoAppMovel=2.4.3
+    // http://www.ingresso.com.br/iphone/ws/IngressoService.svc/rest2/ListarPlanta?IdSessao=52483586&idSetor=00003982&idPdv=00000355&IdPais=1&versaoAppMovel=2.4.3
+    console.info(address);
+
     request(address, function (requestErr, response, body) {
 
-        if (!requestErr && response.statusCode === 200) {
+        console.info('=' * 80);
+        // console.dir(requestErr);
+        // console.dir(response);
+        console.dir(body);
+        console.info('=' * 80);
 
-            xml2js(body, function (xmlErr, result) {
-                var
-                    planta = result.PlantaResponse.PlantaResult[0].Planta[0];
-
-                // The parameters "Linhas" and "Colunas" are not trustable. Have to calculate them manually.
-                //var
-                //    lines = parseInt(planta.$.Linhas, 10),
-                //    columns = parseInt(planta.$.Colunas, 10);
-
-                if (!planta.Cadeira) {
-                    xmlErr = 'Error fetching seat map:\n' +
-                        util.inspect(result.PlantaResponse.PlantaResult[0].Planta[0].DetalhesDoErro[0].DetalhesErro);
-                }
-
-                if (!xmlErr) {
-                    next(null, planta.Cadeira.map(seat2model));
-                } else {
-                    next(xmlErr);
-                }
-            });
-
-        } else {
-            next(requestErr);
-        }
+        // if (!requestErr && response.statusCode === 200) {
+        //
+        //     xml2js(body, function (xmlErr, result) {
+        //
+        //         const planta = result.PlantaResponse.PlantaResult[0].Planta[0];
+        //
+        //         console.dir(planta);
+        //
+        //         // The parameters "Linhas" and "Colunas" are not trustable. Have to calculate them manually.
+        //         //var
+        //         //    lines = parseInt(planta.$.Linhas, 10),
+        //         //    columns = parseInt(planta.$.Colunas, 10);
+        //
+        //         if (!planta.Cadeira) {
+        //             xmlErr = 'Error fetching seat map:\n' +
+        //                 util.inspect(result.PlantaResponse.PlantaResult[0].Planta[0].DetalhesDoErro[0].DetalhesErro);
+        //         }
+        //
+        //         if (!xmlErr) {
+        //             next(null, planta.Cadeira.map(seat2model));
+        //         } else {
+        //             next(xmlErr);
+        //         }
+        //     });
+        //
+        // } else {
+        //     next(requestErr);
+        // }
     });
 
 }

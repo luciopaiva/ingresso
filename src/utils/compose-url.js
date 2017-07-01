@@ -1,7 +1,7 @@
 
 "use strict";
 
-function compose(host, path, params, substitutions) {
+function composeUrl(host, path, params, substitutions) {
 
     params = Object.keys(params).map(function (key) {
         var
@@ -17,6 +17,4 @@ function compose(host, path, params, substitutions) {
     return host + path + '?' + params.join('&');
 }
 
-module.exports = {
-    compose: compose
-};
+module.exports = composeUrl;

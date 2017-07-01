@@ -2,6 +2,7 @@
 "use strict";
 
 module.exports = {
+    WANTS_DEBUG_LOG: false,
     host: {
         base: 'http://www.ingresso.com.br/iphone/ws/IngressoService.svc/rest2/',
         movies: {
@@ -15,7 +16,7 @@ module.exports = {
                 Parceria: '',
                 idPdv: '00000355',
                 IdPais: '1',
-                versaoAppMovel: '2.0.5'
+                versaoAppMovel: '2.4.3'
             }
         },
         dates: {
@@ -23,14 +24,14 @@ module.exports = {
             params: {
                 TpEvento: '00000001',
                 TipoHorarioOuData: 'Data',
-                idPai: '<movieId>',
+                idPai: '<eventId>',
                 Pai: 'S',
                 idCidade: '00000002',
                 idbairro: '',
                 Parceria: '',
                 IdPais: '1',
                 idPdv: '00000355',
-                versaoAppMovel: '2.0.5'
+                versaoAppMovel: '2.4.3'
             }
         },
         sessions: {
@@ -39,13 +40,13 @@ module.exports = {
                 TpEvento: '00000001',
                 ExibeOffline: 'True',
                 Pai: 'S',
-                idPai: '<movieId>',
+                idPai: '<eventId>',
                 idCidade: '00000002',
                 Data: '<date>',
                 Parceria: '',
                 idPdv: '00000355',
                 IdPais: '1',
-                versaoAppMovel: '2.0.5',
+                versaoAppMovel: '2.4.3',
                 idBairro: ''
             }
         },
@@ -53,10 +54,10 @@ module.exports = {
             url: 'ListarPlanta',
             params: {
                 IdSessao: '<sessionId>',
-                idSetor: '00000000',
+                idSetor: '00003982',
                 idPdv: '00000355',
                 IdPais: '1',
-                versaoAppMovel: '2.0.5'
+                versaoAppMovel: '2.4.3'
             }
         }
     }
