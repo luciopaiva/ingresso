@@ -12,7 +12,7 @@ const
  * @returns {void}
  */
 async function main(sessionId, sectorId) {
-    if (!sessionId) {
+    if (!sessionId || !sectorId) {
         console.info('Usage: seatmap <session-id> <sector-id');
         process.exit(0);
     }

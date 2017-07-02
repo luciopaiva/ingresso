@@ -7,17 +7,30 @@ const
 class Seat {
 
     constructor (id, row, column, status, kind, subkind) {
-        this.id = id;
+        this.id = id.trim().toUpperCase();
         this.row = parseInt(row, 10) - 1;
         this.column = parseInt(column, 10) - 1;
-        this.status = status;
-        this.kind = kind;
-        this.subkind = subkind;
+        this.status = status.trim().toUpperCase();
+        this.kind = kind.trim().toUpperCase();
+        this.subkind = subkind.trim().toUpperCase();
         this.symbol = this.decideSymbol();
+    }
+
+    isAvailable() {
+        return this.status === 'L';
     }
 
     toString() {
         return [this.id, this.row, this.column, this.status, this.kind, this.subkind].join(', ');
+    }
+
+    toTsvRow() {
+        return [this.id, this.row, this.column, this.status, this.kind, this.subkind].join('\t');
+    }
+
+    static fromTsvRow(tsvRow) {
+        const [id, row, column, status, kind, subkind] = tsvRow.split('\t');
+        return new Seat(id, row, column, status, kind, subkind);
     }
 
     /**

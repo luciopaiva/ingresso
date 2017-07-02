@@ -11,7 +11,9 @@
   "dependencies": {
     "chalk": "^1.0.0",
     "diacritics": "^1.2.1",
+    "mkdirp": "^0.5.1",
     "mocha": "^3.4.2",
+    "moment": "^2.18.1",
     "request": "^2.55.0",
     "xml2js": "^0.4.17"
   }
