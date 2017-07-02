@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DatasHorasResponse xmlns="http://tempuri.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <DatasHorasResult>
+        <DataHora Data="20170701" TpSessao=""/>
+        <DataHora Data="20170702" TpSessao=""/>
+        <DataHora Data="20170703" TpSessao=""/>
+        <DataHora Data="20170704" TpSessao=""/>
+        <DataHora Data="20170705" TpSessao=""/>
+    </DatasHorasResult>
+</DatasHorasResponse>

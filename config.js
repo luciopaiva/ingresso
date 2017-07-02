@@ -2,7 +2,7 @@
 "use strict";
 
 module.exports = {
-    WANTS_DEBUG_LOG: false,
+    WANTS_DEBUG_LOG: true,
     host: {
         base: 'http://www.ingresso.com.br/iphone/ws/IngressoService.svc/rest2/',
         movies: {
@@ -54,7 +54,7 @@ module.exports = {
             url: 'ListarPlanta',
             params: {
                 IdSessao: '<sessionId>',
-                idSetor: '00003982',
+                idSetor: '<sectorId>',
                 idPdv: '00000355',
                 IdPais: '1',
                 versaoAppMovel: '2.4.3'

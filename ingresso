@@ -2,6 +2,7 @@
 "use strict";
 
 const
+    SeatMap = require('./src/sessions/seatmap'),
     Sessions = require('./src/sessions/sessions'),
     Dates = require('./src/events/dates'),
     Movies = require('./src/movies/movies');
@@ -34,7 +35,8 @@ async function main(movie, date, ...session) {
         }
 
         // if we got here, we have one and only one session; let's get its seat map
-        console.info('FOUND IT!');
+        const seatMapXml = await SeatMap.fetch(selectedSession);
+        SeatMap.show(seatMapXml);
 
     } catch (error) {
         console.error(error);

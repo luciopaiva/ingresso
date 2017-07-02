@@ -228,7 +228,7 @@ function displayLegend(next) {
     console.info('Legend:');
     console.info('\t%s seat (free)', chalk.green('\u25A0'));
     console.info('\t%s seat (taken)', chalk.red('\u25A1'));
-    console.info('\t\u2665 seat with liftable armrests');
+    console.info('\t\u2665 seat with lift up armrests');
     console.info('\tB seat for pregnant / obese person');
     console.info('\tH seat for companion of person with disability');
     console.info('\t\u267F reserved for wheelchair');

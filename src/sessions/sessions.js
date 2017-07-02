@@ -12,11 +12,12 @@ const
 
 /**
  * @param {Map<string, EventPlace[]>} eventPlacesByTheaterName
+ * @param {string} sessionQuery
  */
 function dumpList(eventPlacesByTheaterName, sessionQuery) {
     for (const [theaterName, eventPlaces] of eventPlacesByTheaterName.entries()) {
         if (eventPlaces.length > 0) {
-            let markedTheaterName = 'NOP';
+            let markedTheaterName = theaterName;
             looseMatch(theaterName, sessionQuery, c => chalk.inverse(c), result => markedTheaterName = result);
             logger.info(chalk.yellow('↪ ') + chalk.green(markedTheaterName) +
                 chalk.gray(` (${eventPlaces[0].neighborhood})`));
@@ -97,9 +98,11 @@ class Sessions {
                 logger.info('Trying narrowing down your search.');
             } else if (filteredPlaces[0].sessions.length === 1) {
                 const place = filteredPlaces[0];
+                const session = place.sessions[0];
                 logger.info('Selected theater: ' + chalk.green(place.theaterName));
-                logger.info('Selected session: ' + chalk.green(place.sessions[0].toString()));
-                return place;
+                logger.info('Selected session: ' + chalk.green(place.toString()));
+                logger.info('Selected session id: ' + chalk.green(session.sessionId));
+                return session;
             } else {
                 logger.info('Nothing found. Try broadening your search.');
             }

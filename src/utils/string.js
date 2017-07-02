@@ -37,9 +37,9 @@ function enclose(open, str, close) {
  *
  * @param {string} haystack - where to look for
  * @param {string} needle - what to look for
- * @param {Function} callbackForChar - optional function to be called for each character that matched - only param is
- *                                     the character itself; returning value will be used to compose result
- * @param {Function} callbackForResult - optional function to be called when the result is ready
+ * @param {Function?} callbackForChar - optional function to be called for each character that matched - only param is
+ *                                      the character itself; returning value will be used to compose result
+ * @param {Function?} callbackForResult - optional function to be called when the result is ready
  * @return {boolean} whether needle was found
  */
 function looseMatch(haystack, needle, callbackForChar, callbackForResult) {
