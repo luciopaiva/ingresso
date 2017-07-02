@@ -100,8 +100,8 @@ class Sessions {
                 const place = filteredPlaces[0];
                 const session = place.sessions[0];
                 logger.info('Selected theater: ' + chalk.green(place.theaterName));
-                logger.info('Selected session: ' + chalk.green(place.toString()));
-                logger.info('Selected session id: ' + chalk.green(session.sessionId));
+                logger.info('Selected session: ' + chalk.green(place.toString()) +
+                    chalk.gray(` [session id: ${session.sessionId}] [sector id: ${session.sectorId}]`));
                 return session;
             } else {
                 logger.info('Nothing found. Try broadening your search.');

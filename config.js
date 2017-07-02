@@ -2,7 +2,7 @@
 "use strict";
 
 module.exports = {
-    WANTS_DEBUG_LOG: true,
+    WANTS_DEBUG_LOG: false,
     host: {
         base: 'http://www.ingresso.com.br/iphone/ws/IngressoService.svc/rest2/',
         movies: {
