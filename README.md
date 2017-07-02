@@ -55,3 +55,12 @@ Date is chosen:
 Theater is chosen, among with session info. Seat map is revealed:
 
 ![Screenshot](https://raw.githubusercontent.com/luciopaiva/ingresso/master/screenshots/ingresso-sample.png)
+
+## Seat map symbols
+
+New symbols may appear over time, but here are a few common ones:
+
+    ❎ regular seat
+    ♿ seat for people with disabilities
+    H seat for people accompanying a disabled person
+    ❤ seat with lift up armrest
