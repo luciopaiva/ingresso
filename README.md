@@ -64,3 +64,7 @@ New symbols may appear over time, but here are a few common ones:
     ♿ seat for people with disabilities
     H seat for people accompanying a disabled person
     ❤ seat with lift up armrest
+
+## Ingresso.com API
+
+This application accesses ingresso.com's mobile API, which is not officially released (AFAIK); use it at your own risk.
