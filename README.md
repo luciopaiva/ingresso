@@ -1,4 +1,4 @@
-# ingresso
+# Ingresso.com Seat Map Viewer
 
 ![Screenshot](https://raw.githubusercontent.com/luciopaiva/ingresso/master/screenshots/ingresso.png)
 
