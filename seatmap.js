@@ -18,12 +18,13 @@ async function main(sessionId, sectorId) {
     }
 
     try {
-        const selectedSession = new Session(sessionId, null, null, null, null, sectorId);
+        const selectedSession = new Session(sessionId, sectorId);
         const seatMapXml = await SeatMap.fetch(selectedSession);
+        const seats = SeatMap.parseSeats(seatMapXml);
 
         // const XmlHelper = require('./src/utils/xml-helper');
         // const seatMapXml = await XmlHelper.parse(require('fs').readFileSync('./sample-xmls/seatmap.xml', 'utf-8'));
-        SeatMap.show(seatMapXml);
+        SeatMap.show(seats);
 
     } catch (error) {
         console.error(error);

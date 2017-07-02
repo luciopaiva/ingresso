@@ -26,27 +26,33 @@ class SeatMap {
     }
 
     /**
-     * @param {Object} xml - XML response
-     * @return {void}
+     * @param {Object} xml - the XML to parse
+     * @return {Seat[]} a collection of seats
      */
-    static show(xml) {
+    static parseSeats(xml) {
         // check there's a map first
         let mapElement = xml.queryByTagName('planta');
         if (mapElement < 1) {
             logger.error('Server answer returned no map!');
-            return;
+            return null;
         }
         mapElement = mapElement[0];
 
         // check if response contains any errors
         if (!!mapElement['detalhesdoerro']) {
             logger.error('Seat map is not available for this session.');
-            return;
+            return null;
         }
 
-        // prepare seats
-        const seats = mapElement['cadeira'].map(rawSeat => Seat.fromXml(rawSeat));
+        // create and return seats
+        return mapElement['cadeira'].map(rawSeat => Seat.fromXml(rawSeat));
+    }
 
+    /**
+     * @param {Seat[]} seats - collection of seats
+     * @return {void}
+     */
+    static show(seats) {
         // calculate room bounds
         let width = 1 + seats.map(seat => seat.column).reduce((max, col) => Math.max(max, col), 0);
         let height = 1 + seats.map(seat => seat.row).reduce((max, row) => Math.max(max, row), 0);

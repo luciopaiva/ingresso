@@ -18,7 +18,7 @@ function extractSectorId(xmlNode) {
 
 class Session {
 
-    constructor (sessionId, time, subtitles, kind, soldOut, sectorId) {
+    constructor (sessionId, sectorId, time, subtitles, kind, soldOut) {
         this.sessionId = sessionId;
         this.time = time;
         this.subtitles = subtitles;
@@ -46,7 +46,7 @@ class Session {
         const kind = xmlNode.$['TipoSessao'].trim().toLowerCase();
         const sectorId = extractSectorId(xmlNode);
 
-        return new Session(sessionId, time, subtitles, kind, isSoldOut, sectorId);
+        return new Session(sessionId, sectorId, time, subtitles, kind, isSoldOut);
     }
 }
 

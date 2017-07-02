@@ -36,7 +36,8 @@ async function main(movie, date, ...session) {
 
         // if we got here, we have one and only one session; let's get its seat map
         const seatMapXml = await SeatMap.fetch(selectedSession);
-        SeatMap.show(seatMapXml);
+        const seats = SeatMap.parseSeats(seatMapXml);
+        SeatMap.show(seats);
 
     } catch (error) {
         console.error(error);
