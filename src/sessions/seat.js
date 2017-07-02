@@ -39,6 +39,7 @@ class Seat {
             case 'L':
                 return chalk.blue(this.id);
             default:
+                return this.kind;
         }
     }
 
@@ -46,7 +47,7 @@ class Seat {
         if ((typeof this.subkind === 'string') && this.subkind.length > 0) {
             switch (this.subkind[0]) {
                 case 'N':
-                    return this.status === 'L' ? '▣' : '▢';  // regular
+                    return '❎';  // this.status === 'L' ? '▣' : '▢';  // regular
                 case 'T':
                     return '\u2665';  // lift up armrest
                 case 'O':
@@ -57,6 +58,10 @@ class Seat {
                     return 'R';
                 case 'H':
                     return 'H';  // companion of person with disabilities
+                case 'J':
+                    return this.status === 'L' ? '◆' : '◇';  // super seat
+                case 'V':
+                    return 'V';  // motion simulator seat
             }
             return this.subkind[0];
         } else {
