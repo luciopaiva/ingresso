@@ -38,6 +38,12 @@ class SeatMap {
         }
         mapElement = mapElement[0];
 
+        // check if response contains any errors
+        if (!!mapElement['detalhesdoerro']) {
+            logger.error('Seat map is not available for this session.');
+            return;
+        }
+
         // prepare seats
         const seats = mapElement['cadeira'].map(rawSeat => Seat.fromXml(rawSeat));
 
