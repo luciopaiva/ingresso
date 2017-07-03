@@ -1,14 +1,16 @@
-# Ingresso.com Seat Map Viewer
+# Ingresso.com seat map viewer
 
 ![Screenshot](https://raw.githubusercontent.com/luciopaiva/ingresso/master/screenshots/ingresso.png)
 
 Ingresso is a simple application that can be used to view seatmaps for a given ingresso.com movie session. It allows you to search among available sessions and, once a session is chosen, it shows you its seat map and information about current seat occupancy.
 
-How to install:
+## How to install
 
     git clone git@github.com:luciopaiva/ingresso.git
     cd ingresso
     npm install
+
+## How to use it
 
 To use it, start by running:
 
