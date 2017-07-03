@@ -68,3 +68,21 @@ New symbols may appear over time, but here are a few common ones:
 ## Ingresso.com API
 
 This application accesses ingresso.com's mobile API, which is not officially released (AFAIK); use it at your own risk.
+
+## Cronjob
+
+In case you want to periodically query for a certain session, there's a script for that in the root directory: `seatmap-task`.
+
+First use `ingresso` to figure the `session-id` and `sector-id` of the session you're interested in. It will appear in gray right next to the session information line. Then configure your crontab:
+
+    crontab -e
+
+And add a line to, say, query for seat maps each and every minute:
+
+    * * * * * cd path/to/ingresso && ./seatmap-task <session-id> <sector-id>
+
+Remember to replace `<session-id>` and `<sector-id>` properly.
+
+A folder named `seatmap-<session-id>` will appear (within a minute) inside ingresso's folder. It will contain a log file (which will be appended to on each job run) and a TSV file as well, containing the initial seat map. As the job runs, new TSV files will appear, but only if something changed since the last run.
+
+In case no folder appears after one minute, make sure to add a PATH variable to your crontab. For more info, see [this](https://askubuntu.com/a/23438/204815).
