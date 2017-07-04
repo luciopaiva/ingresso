@@ -58,6 +58,10 @@ Theater is chosen, among with session info. Seat map is revealed:
 
 ![Screenshot](https://raw.githubusercontent.com/luciopaiva/ingresso/master/screenshots/ingresso-sample.png)
 
+And, once you know the session id and sector id of a session, you can query it directly by running `seatmap` which can be found at the root directory:
+
+    ./seatmap <session-id> <sector-id>
+
 ## Seat map symbols
 
 New symbols may appear over time, but here are a few common ones:
@@ -71,7 +75,7 @@ New symbols may appear over time, but here are a few common ones:
 
 This application accesses ingresso.com's mobile API, which is not officially released (AFAIK); use it at your own risk.
 
-## Cronjob
+## Automated fetches
 
 In case you want to periodically query for a certain session, there's a script for that in the root directory: `seatmap-task`.
 
@@ -88,3 +92,9 @@ Remember to replace `<session-id>` and `<sector-id>` properly.
 A folder named `seatmap-<session-id>` will appear (within a minute) inside ingresso's folder. It will contain a log file (which will be appended to on each job run) and a TSV file as well, containing the initial seat map. As the job runs, new TSV files will appear, but only if something changed since the last run.
 
 In case no folder appears after one minute, make sure to add a PATH variable to your crontab. For more info, see [this](https://askubuntu.com/a/23438/204815).
+
+Once you have several TSV files, you can dump seat map occupancy progression by running `seatmap-timeline`:
+
+    ./seatmap-timeline <session-id>
+
+Don't forget to remove a session from your crontab once it is no longer available, otherwise the job will keep executing although no new information will be retrieved.
