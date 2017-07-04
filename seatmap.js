@@ -22,9 +22,11 @@ async function main(sessionId, sectorId) {
         const seatMapXml = await SeatMap.fetch(selectedSession);
         const seats = SeatMap.parseSeats(seatMapXml);
 
-        // const XmlHelper = require('./src/utils/xml-helper');
-        // const seatMapXml = await XmlHelper.parse(require('fs').readFileSync('./sample-xmls/seatmap.xml', 'utf-8'));
-        SeatMap.show(seats);
+        if (seats) {
+            // const XmlHelper = require('./src/utils/xml-helper');
+            // const seatMapXml = await XmlHelper.parse(require('fs').readFileSync('./sample-xmls/seatmap.xml', 'utf-8'));
+            SeatMap.show(seats);
+        }
 
     } catch (error) {
         console.error(error);

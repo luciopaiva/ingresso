@@ -7,13 +7,8 @@ const
     mkdirp = require('mkdirp'),
     Seat = require('./src/sessions/seat'),
     SeatMap = require('./src/sessions/seatmap'),
+    SeatMapUtils = require('./src/sessions/seatmap-utils'),
     Session = require('./src/sessions/session');
-
-const
-    LOG_FILE_NAME = 'seatmap.log',
-    SEAT_MAP_FILE_NAME_PREFIX = 'seatmap-',
-    SEAT_MAP_FILE_NAME_EXTENSION = '.tsv',
-    SEAT_MAP_DIRECTORY_PREFIX = 'seatmap-';
 
 
 class SeatMapTask {
@@ -40,16 +35,21 @@ class SeatMapTask {
             const seatMapXml = await SeatMap.fetch(selectedSession);
             this.log('Parsing seats...');
             this.seats = SeatMap.parseSeats(seatMapXml);
-            this.log('Seats found: ' + this.seats.length);
-            const seatsAvailable = countSeatsAvailable(this.seats);
-            this.log('Seats free: ' + seatsAvailable);
 
-            const previousSeatsAvailable = this.obtainPreviousSeatsAvailable();
-            if (seatsAvailable !== previousSeatsAvailable) {
-                this.log(`Changed from ${previousSeatsAvailable} to ${seatsAvailable} seats available. Writing TSV...`);
-                this.dumpSeatsToTsv();
+            if (this.seats) {
+                this.log('Seats found: ' + this.seats.length);
+                const seatsAvailable = SeatMapUtils.countSeatsAvailable(this.seats);
+                this.log('Seats free: ' + seatsAvailable);
+
+                const previousSeatsAvailable = this.obtainPreviousSeatsAvailable();
+                if (seatsAvailable !== previousSeatsAvailable) {
+                    this.log(`Changed from ${previousSeatsAvailable} to ${seatsAvailable} seats available. Writing TSV...`);
+                    this.dumpSeatsToTsv();
+                } else {
+                    this.log('There was no changes since the last run.');
+                }
             } else {
-                this.log('There was no changes since the last run.');
+                this.log('Seat map is no longer available for this session.');
             }
 
         } catch (error) {
@@ -64,7 +64,9 @@ class SeatMapTask {
      * @return {number} number of available seats or -1 if no previous snapshot was found
      */
     obtainPreviousSeatsAvailable() {
-        const fileNames = fs.readdirSync('.').filter(fileName => fileName.endsWith('.tsv'));
+        const fileNames = fs.readdirSync('.')
+            .filter(fileName => fileName.endsWith(SeatMapUtils.SEAT_MAP_FILE_NAME_EXTENSION));
+
         if (fileNames.length === 0) {
             this.log('There is no previous seat map to compare with.');
             return -1;
@@ -82,13 +84,14 @@ class SeatMapTask {
                     throw error;
                 }
             });
-            return countSeatsAvailable(seats);
+            return SeatMapUtils.countSeatsAvailable(seats);
         }
     }
 
     dumpSeatsToTsv() {
         const timestamp = moment().format('YYYYMMDD-HHmmss');
-        const fd = fs.openSync(SEAT_MAP_FILE_NAME_PREFIX + timestamp + SEAT_MAP_FILE_NAME_EXTENSION, 'w');
+        const fd = fs.openSync(SeatMapUtils.SEAT_MAP_FILE_NAME_PREFIX + timestamp +
+            SeatMapUtils.SEAT_MAP_FILE_NAME_EXTENSION, 'w');
         for (const seat of this.seats) {
             fs.writeSync(fd, seat.toTsvRow() + '\n', null, 'utf-8');
         }
@@ -96,23 +99,19 @@ class SeatMapTask {
     }
 
     enterSeatMapDirectory() {
-        const dirName = SEAT_MAP_DIRECTORY_PREFIX + this.sessionId;
+        const dirName = SeatMapUtils.SEAT_MAP_DIRECTORY_PREFIX + this.sessionId;
         mkdirp.sync(dirName);
         process.chdir(dirName);
     }
 
     openLogFile() {
-        this.logFileDesc = fs.openSync(LOG_FILE_NAME, 'a');
+        this.logFileDesc = fs.openSync(SeatMapUtils.LOG_FILE_NAME, 'a');
     }
 
     log(msg) {
         const timestamp = (new Date()).toISOString();
         fs.writeSync(this.logFileDesc, `${timestamp}: ${msg}\n`, null, 'utf-8');
     }
-}
-
-function countSeatsAvailable(seats) {
-    return seats.reduce((count, seat) => count + (seat.isAvailable() ? 1 : 0), 0);
 }
 
 /**
@@ -122,7 +121,7 @@ function countSeatsAvailable(seats) {
  */
 async function main(sessionId, sectorId) {
     if (!sessionId || !sectorId) {
-        console.info('Usage: seatmap <session-id> <sector-id');
+        console.info('Usage: seatmap <session-id> <sector-id>');
         process.exit(0);
     }
 
