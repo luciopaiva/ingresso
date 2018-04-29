@@ -155,12 +155,20 @@ class Ingresso {
     }
 
     static async drawSeatMap(selectedSession) {
-        console.info("Fetching seat map... (be patient, sometimes their API takes forever to respond)");
+        process.stdout.write("Fetching seat map...");
+
+        // wait 3 seconds and then show a message telling we're not stuck
+        const takingTooLongTimer = setTimeout(() => {
+            process.stdout.write(chalk.gray(" (be patient, sometimes their API takes forever to respond)"));
+        }, 3000);
 
         const seatMapUrl = config.seatsUrl
             .replace("<sessionId>", selectedSession.id).replace("<sectionId>", selectedSession.defaultSector);
         /** @type {SeatsResult} */
         const seatMap = await JsonHelper.getJson(seatMapUrl);
+
+        clearTimeout(takingTooLongTimer);
+        console.info("");  // new line
 
         try {
             SeatMap.draw(seatMap);
