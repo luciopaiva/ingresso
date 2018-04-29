@@ -4,6 +4,8 @@ const
     chalk = require("chalk");
 
 const
+    MAX_HEIGHT_IN_LINES = 10,
+    RADIO_GROUP_MIN_WIDTH = 30,
     CTRL_C = 0x03,
     RETURN = 0x0d,
     ESC = 0x1b,
@@ -11,6 +13,7 @@ const
     QUIT_CHAR1 = "q".charCodeAt(0),
     QUIT_CHAR2 = "Q".charCodeAt(0),
     CSI = Buffer.from([ESC, ESC_BRACKET]),
+    SHOW_SCROLLING_HELP = false,
     SHOULD_HIGHLIGHT_SELECTED = false;
 
 class TtyRadio {
@@ -27,13 +30,16 @@ class TtyRadio {
         this.options = options;
 
         this.selectedIndex = 0;
+        this.topIndex = 0;
+        this.radioGroupHeight = Math.min(this.options.length, MAX_HEIGHT_IN_LINES);
+        this.showScrollBar = this.radioGroupHeight < this.options.length;
 
-        this.initializeInterface();
+        this.initializeStreams();
         console.info(this.promptMessage);
         this.drawOptions();
     }
 
-    initializeInterface() {
+    initializeStreams() {
         this.writable = new Writable({
             write: (chunk, encoding, callback) => {
                 if (chunk.length > 0) {
@@ -79,11 +85,21 @@ class TtyRadio {
     }
 
     static moveCursorUp(count = 1) {
-        TtyRadio.moveCursor(count, true);
+        TtyRadio.moveCursorRelative(count, true);
     }
 
     static moveCursorDown(count = 1) {
-        TtyRadio.moveCursor(count, false);
+        TtyRadio.moveCursorRelative(count, false);
+    }
+
+    static clearLine() {
+        process.stdout.write(CSI);
+        process.stdout.write("2K");
+    }
+
+    static clearScreen() {
+        process.stdout.write(CSI);
+        process.stdout.write("2J");
     }
 
     static clearScreenDown() {
@@ -91,7 +107,15 @@ class TtyRadio {
         process.stdout.write("J");
     }
 
-    static moveCursor(count = 1, isMovingUp) {
+    static moveCursor(x, y) {
+        if (x < 1 || y < 1) {
+            throw new Error("Coordinates are 1-based");
+        }
+        process.stdout.write(CSI);
+        process.stdout.write(`${x};${y}H`);
+    }
+
+    static moveCursorRelative(count = 1, isMovingUp) {
         if (count === 0) {
             return;
         } else if (count < 0) {
@@ -102,19 +126,49 @@ class TtyRadio {
     }
 
     drawOptions() {
-        const labelLength = this.options.reduce((biggest, option) => Math.max(biggest, option.length), 0);
-        this.options.forEach((option, index) => {
-            const isSelected = index === this.selectedIndex;
+        /** @type {String[]} */
+        const visibleOptions = this.options.slice(this.topIndex, this.topIndex + this.radioGroupHeight);
+
+        // must compute label length based on all options, otherwise width may vary as user scrolls
+        const labelLength = Math.max(RADIO_GROUP_MIN_WIDTH,
+            this.options.reduce((biggest, option) => Math.max(biggest, option.length), 0));
+
+        let scrollBarTop = 0;
+        let scrollBarHeight = 0;
+        if (this.showScrollBar) {
+            scrollBarTop = Math.round(this.radioGroupHeight * this.topIndex / this.options.length);
+            scrollBarHeight = Math.round(this.radioGroupHeight * (visibleOptions.length / this.options.length));
+        }
+
+        visibleOptions.forEach((option, index) => {
+            const isSelected = (index + this.topIndex) === this.selectedIndex;
             const marker = isSelected ? chalk.green("◉") : chalk.gray("◯");
             let label = option + (option.length < labelLength ? " ".repeat(labelLength - option.length) : "");
             if (SHOULD_HIGHLIGHT_SELECTED) {
                 label = isSelected ? chalk.inverse(label) : label;
             }
-            console.info(`  ${marker} ${label}`);
+
+            if (this.showScrollBar) {
+                const scrollBarPart = (index >= scrollBarTop && index < scrollBarTop + scrollBarHeight) ? "▒" : "░";
+
+                let message = "";
+                if (SHOW_SCROLLING_HELP) {
+                    if (index === 0 && this.topIndex > 0) {
+                        message = "(scroll up for more)";
+                    } else if (index === (this.radioGroupHeight - 1) &&
+                        this.topIndex + this.radioGroupHeight < (this.options.length)) {
+                        message = "(scroll down for more)";
+                    }
+                    message = chalk.gray(message);
+                }
+                console.info(`  ${marker} ${label} ${scrollBarPart} ${message}`);
+            } else {
+                console.info(`  ${marker} ${label}`);
+            }
         });
 
         // move cursor to the line where the first option is, so we can clear everything down when something changes
-        TtyRadio.moveCursorUp(this.options.length);
+        TtyRadio.moveCursorUp(this.radioGroupHeight);
     }
 
     selectNext() {
@@ -122,6 +176,9 @@ class TtyRadio {
 
         if (this.selectedIndex < this.options.length - 1) {
             this.selectedIndex++;
+            if (this.selectedIndex >= this.topIndex + this.radioGroupHeight) {
+                this.topIndex++;
+            }
         }
 
         this.drawOptions();
@@ -132,6 +189,9 @@ class TtyRadio {
 
         if (this.selectedIndex > 0) {
             this.selectedIndex--;
+            if (this.selectedIndex < this.topIndex) {
+                this.topIndex--;
+            }
         }
 
         this.drawOptions();
@@ -200,19 +260,20 @@ if (require.main === module) {
 
     /** @return {void} */
     async function main() {
-        const selectedIndex = await TtyRadio.show("Choose an option:", ["one", "two", "three"]);
+        const selectedIndex = await TtyRadio.show("Choose an option:",
+            Array.from(Array(20), (e,i) => "Option " + (i+1)));
         if (selectedIndex !== undefined) {
             console.info("\nSelected " + selectedIndex);
         } else {
             console.info("Canceled selection");
         }
 
-        const selectedIndex2 = await TtyRadio.show("\nChoose another option:", ["foo", "bar"]);
-        if (selectedIndex2 !== undefined) {
-            console.info("\nSelected " + selectedIndex2);
-        } else {
-            console.info("Canceled selection");
-        }
+        // const selectedIndex2 = await TtyRadio.show("\nChoose another option:", ["foo", "bar"]);
+        // if (selectedIndex2 !== undefined) {
+        //     console.info("\nSelected " + selectedIndex2);
+        // } else {
+        //     console.info("Canceled selection");
+        // }
 
         // needed because stdin is still being referenced (see https://stackoverflow.com/q/26004519/778272)
         process.exit(0);

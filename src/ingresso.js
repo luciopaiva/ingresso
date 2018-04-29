@@ -14,9 +14,7 @@ async function main() {
         /** @type {MovieResult[]} */
         const movies = await JsonHelper.getJson(config.moviesUrl);
 
-        const selectedMovieIndex = await TtyRadio.show("Choose movie:", movies
-            .slice(0,10)  // ToDo remove cap and add pagination to TtyRadio!
-            .map(movie => movie.title));
+        const selectedMovieIndex = await TtyRadio.show("Choose movie:", movies.map(movie => movie.title));
 
         if (selectedMovieIndex === undefined) {
             console.info("Canceled");
