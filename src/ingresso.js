@@ -2,7 +2,7 @@
 const
     chalk = require("chalk"),
     config = require("../config"),
-    TtyRadio = require("./utils/tty-radio"),
+    TtyRadioGroup = require("./utils/tty-radio-group"),
     JsonHelper = require("./utils/json-helper"),
     SeatMap = require("./seatmap");
 
@@ -14,7 +14,7 @@ async function main() {
         /** @type {MovieResult[]} */
         const movies = await JsonHelper.getJson(config.moviesUrl);
 
-        const selectedMovieIndex = await TtyRadio.show("Choose movie:", movies.map(movie => movie.title));
+        const selectedMovieIndex = await TtyRadioGroup.show("Choose movie:", movies.map(movie => movie.title));
 
         if (selectedMovieIndex === undefined) {
             console.info("Canceled");
@@ -27,7 +27,7 @@ async function main() {
         /** @type {DateResult[]} */
         const dates = await JsonHelper.getJson(config.datesUrl.replace("<eventId>", selectedMovie.id));
 
-        const selectedDateIndex = await TtyRadio.show("Choose date:", dates.map(date => date.date));
+        const selectedDateIndex = await TtyRadioGroup.show("Choose date:", dates.map(date => date.date));
 
         if (selectedDateIndex === undefined) {
             console.info("Canceled");
@@ -47,7 +47,7 @@ async function main() {
 
         const theaters = sessionsResult[0].theaters;
 
-        const selectedTheaterIndex = await TtyRadio.show("Choose theater:", theaters
+        const selectedTheaterIndex = await TtyRadioGroup.show("Choose theater:", theaters
             .map(theater => `${theater.name} ${chalk.gray("(" + theater.neighborhood) + ")"}`));
 
         if (selectedTheaterIndex === undefined) {
@@ -69,7 +69,7 @@ async function main() {
             .reduce((allSessions, thisRoomSessions) => allSessions.concat(thisRoomSessions), []);
 
         let previousRoomName = "";
-        const selectedSessionIndex = await TtyRadio.show("Choose session", sessions
+        const selectedSessionIndex = await TtyRadioGroup.show("Choose session", sessions
             .map(session => {
                 let roomName = session.room.name;
                 if (roomName === previousRoomName) {

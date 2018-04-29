@@ -16,7 +16,7 @@ const
     SHOW_SCROLLING_HELP = false,
     SHOULD_HIGHLIGHT_SELECTED = false;
 
-class TtyRadio {
+class TtyRadioGroup {
 
     /**
      * @private
@@ -81,15 +81,15 @@ class TtyRadio {
         process.on("exit", () => this.cancel());
         process.on("SIGINT", () => this.cancel());
 
-        TtyRadio.hideCursor();
+        TtyRadioGroup.hideCursor();
     }
 
     static moveCursorUp(count = 1) {
-        TtyRadio.moveCursorRelative(count, true);
+        TtyRadioGroup.moveCursorRelative(count, true);
     }
 
     static moveCursorDown(count = 1) {
-        TtyRadio.moveCursorRelative(count, false);
+        TtyRadioGroup.moveCursorRelative(count, false);
     }
 
     static clearLine() {
@@ -168,11 +168,11 @@ class TtyRadio {
         });
 
         // move cursor to the line where the first option is, so we can clear everything down when something changes
-        TtyRadio.moveCursorUp(this.radioGroupHeight);
+        TtyRadioGroup.moveCursorUp(this.radioGroupHeight);
     }
 
     selectNext() {
-        TtyRadio.clearScreenDown();
+        TtyRadioGroup.clearScreenDown();
 
         if (this.selectedIndex < this.options.length - 1) {
             this.selectedIndex++;
@@ -185,7 +185,7 @@ class TtyRadio {
     }
 
     selectPrevious() {
-        TtyRadio.clearScreenDown();
+        TtyRadioGroup.clearScreenDown();
 
         if (this.selectedIndex > 0) {
             this.selectedIndex--;
@@ -212,10 +212,10 @@ class TtyRadio {
         process.stdin.setRawMode(false);
 
         // move the cursor to the end of the list, so it stays fully rendered after we exit it
-        TtyRadio.moveCursorDown(this.options.length);
+        TtyRadioGroup.moveCursorDown(this.options.length);
         // process.stdout.write("\n");  // also leave a blank line after it
 
-        TtyRadio.showCursor();
+        TtyRadioGroup.showCursor();
     }
 
     static escape(code) {
@@ -223,11 +223,11 @@ class TtyRadio {
     }
 
     static hideCursor() {
-        process.stdout.write(TtyRadio.escape("?25l"));
+        process.stdout.write(TtyRadioGroup.escape("?25l"));
     }
 
     static showCursor() {
-        process.stdout.write(TtyRadio.escape("?25h"));
+        process.stdout.write(TtyRadioGroup.escape("?25h"));
     }
 
     /**
@@ -249,18 +249,18 @@ class TtyRadio {
             throw new Error("Options expected");
         }
 
-        return new Promise((resolve) => new TtyRadio(resolve, prompt, options));
+        return new Promise((resolve) => new TtyRadioGroup(resolve, prompt, options));
     }
 }
 
-module.exports = TtyRadio;
+module.exports = TtyRadioGroup;
 
 if (require.main === module) {
     // sample usage
 
     /** @return {void} */
     async function main() {
-        const selectedIndex = await TtyRadio.show("Choose an option:",
+        const selectedIndex = await TtyRadioGroup.show("Choose an option:",
             Array.from(Array(20), (e,i) => "Option " + (i+1)));
         if (selectedIndex !== undefined) {
             console.info("\nSelected " + selectedIndex);
@@ -268,7 +268,7 @@ if (require.main === module) {
             console.info("Canceled selection");
         }
 
-        // const selectedIndex2 = await TtyRadio.show("\nChoose another option:", ["foo", "bar"]);
+        // const selectedIndex2 = await TtyRadioGroup.show("\nChoose another option:", ["foo", "bar"]);
         // if (selectedIndex2 !== undefined) {
         //     console.info("\nSelected " + selectedIndex2);
         // } else {
