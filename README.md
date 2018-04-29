@@ -98,3 +98,7 @@ Once you have several TSV files, you can dump seat map occupancy progression by 
     ./seatmap-timeline <session-id>
 
 Don't forget to remove a session from your crontab once it is no longer available, otherwise the job will keep executing although no new information will be retrieved.
+
+## Development
+
+Check Ingresso's Swagger: https://api-content.ingresso.com/v0/swagger/ui/index

@@ -1,0 +1,3622 @@
+{
+  "created": "0001-01-01T00:00:00",
+  "lines": [
+    {
+      "line": 2,
+      "seats": [
+        {
+          "id": "1",
+          "line": 2,
+          "column": 5,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "M 13",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "1",
+            "lugA_LINHA_N": "2",
+            "lugA_COLUNA_N": "5"
+          },
+          "type": "Couple",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "2",
+          "line": 2,
+          "column": 6,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "M 12",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "2",
+            "lugA_LINHA_N": "2",
+            "lugA_COLUNA_N": "6"
+          },
+          "type": "Couple",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "3",
+          "line": 2,
+          "column": 7,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "M 11",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "3",
+            "lugA_LINHA_N": "2",
+            "lugA_COLUNA_N": "7"
+          },
+          "type": "Couple",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "4",
+          "line": 2,
+          "column": 8,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "M 10",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "4",
+            "lugA_LINHA_N": "2",
+            "lugA_COLUNA_N": "8"
+          },
+          "type": "Couple",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "5",
+          "line": 2,
+          "column": 9,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "M 09",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "5",
+            "lugA_LINHA_N": "2",
+            "lugA_COLUNA_N": "9"
+          },
+          "type": "Couple",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "6",
+          "line": 2,
+          "column": 10,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "M 08",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "6",
+            "lugA_LINHA_N": "2",
+            "lugA_COLUNA_N": "10"
+          },
+          "type": "Couple",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "7",
+          "line": 2,
+          "column": 11,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "M 07",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "7",
+            "lugA_LINHA_N": "2",
+            "lugA_COLUNA_N": "11"
+          },
+          "type": "Couple",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "8",
+          "line": 2,
+          "column": 12,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "M 06",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "8",
+            "lugA_LINHA_N": "2",
+            "lugA_COLUNA_N": "12"
+          },
+          "type": "Couple",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "9",
+          "line": 2,
+          "column": 13,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "M 05",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "9",
+            "lugA_LINHA_N": "2",
+            "lugA_COLUNA_N": "13"
+          },
+          "type": "Couple",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "10",
+          "line": 2,
+          "column": 14,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "M 04",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "10",
+            "lugA_LINHA_N": "2",
+            "lugA_COLUNA_N": "14"
+          },
+          "type": "Couple",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "11",
+          "line": 2,
+          "column": 15,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "M 03",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "11",
+            "lugA_LINHA_N": "2",
+            "lugA_COLUNA_N": "15"
+          },
+          "type": "Couple",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "12",
+          "line": 2,
+          "column": 16,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "M 02",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "12",
+            "lugA_LINHA_N": "2",
+            "lugA_COLUNA_N": "16"
+          },
+          "type": "Couple",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "13",
+          "line": 2,
+          "column": 17,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "M 01",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "13",
+            "lugA_LINHA_N": "2",
+            "lugA_COLUNA_N": "17"
+          },
+          "type": "Couple",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        }
+      ]
+    },
+    {
+      "line": 3,
+      "seats": [
+        {
+          "id": "14",
+          "line": 3,
+          "column": 6,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "L 12",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "14",
+            "lugA_LINHA_N": "3",
+            "lugA_COLUNA_N": "6"
+          },
+          "type": "Couple",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "15",
+          "line": 3,
+          "column": 7,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "L 11",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "15",
+            "lugA_LINHA_N": "3",
+            "lugA_COLUNA_N": "7"
+          },
+          "type": "Couple",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "16",
+          "line": 3,
+          "column": 8,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "L 10",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "16",
+            "lugA_LINHA_N": "3",
+            "lugA_COLUNA_N": "8"
+          },
+          "type": "Couple",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "17",
+          "line": 3,
+          "column": 9,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "L 09",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "17",
+            "lugA_LINHA_N": "3",
+            "lugA_COLUNA_N": "9"
+          },
+          "type": "Couple",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "18",
+          "line": 3,
+          "column": 10,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "L 08",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "18",
+            "lugA_LINHA_N": "3",
+            "lugA_COLUNA_N": "10"
+          },
+          "type": "Couple",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "19",
+          "line": 3,
+          "column": 11,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "L 07",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "19",
+            "lugA_LINHA_N": "3",
+            "lugA_COLUNA_N": "11"
+          },
+          "type": "Couple",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "20",
+          "line": 3,
+          "column": 12,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "L 06",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "20",
+            "lugA_LINHA_N": "3",
+            "lugA_COLUNA_N": "12"
+          },
+          "type": "Couple",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "21",
+          "line": 3,
+          "column": 13,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "L 05",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "21",
+            "lugA_LINHA_N": "3",
+            "lugA_COLUNA_N": "13"
+          },
+          "type": "Couple",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "22",
+          "line": 3,
+          "column": 14,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "L 04",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "22",
+            "lugA_LINHA_N": "3",
+            "lugA_COLUNA_N": "14"
+          },
+          "type": "Couple",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "23",
+          "line": 3,
+          "column": 15,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "L 03",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "23",
+            "lugA_LINHA_N": "3",
+            "lugA_COLUNA_N": "15"
+          },
+          "type": "Couple",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "24",
+          "line": 3,
+          "column": 16,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "L 02",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "24",
+            "lugA_LINHA_N": "3",
+            "lugA_COLUNA_N": "16"
+          },
+          "type": "Couple",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "25",
+          "line": 3,
+          "column": 17,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "L 01",
+          "positionSubType": "T000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Namoradeira Simples",
+          "procId": {
+            "lugA_POSLUGREAL_N": "25",
+            "lugA_LINHA_N": "3",
+            "lugA_COLUNA_N": "17"
+          },
+          "type": "Couple",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        }
+      ]
+    },
+    {
+      "line": 4,
+      "seats": [
+        {
+          "id": "26",
+          "line": 4,
+          "column": 5,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "K 13",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "26",
+            "lugA_LINHA_N": "4",
+            "lugA_COLUNA_N": "5"
+          },
+          "type": "Regular",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "27",
+          "line": 4,
+          "column": 6,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "K 12",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "27",
+            "lugA_LINHA_N": "4",
+            "lugA_COLUNA_N": "6"
+          },
+          "type": "Regular",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "28",
+          "line": 4,
+          "column": 7,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "K 11",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "28",
+            "lugA_LINHA_N": "4",
+            "lugA_COLUNA_N": "7"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "29",
+          "line": 4,
+          "column": 8,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "K 10",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "29",
+            "lugA_LINHA_N": "4",
+            "lugA_COLUNA_N": "8"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "30",
+          "line": 4,
+          "column": 9,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "K 09",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "30",
+            "lugA_LINHA_N": "4",
+            "lugA_COLUNA_N": "9"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "31",
+          "line": 4,
+          "column": 10,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "K 08",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "31",
+            "lugA_LINHA_N": "4",
+            "lugA_COLUNA_N": "10"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "32",
+          "line": 4,
+          "column": 11,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "K 07",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "32",
+            "lugA_LINHA_N": "4",
+            "lugA_COLUNA_N": "11"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "33",
+          "line": 4,
+          "column": 12,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "K 06",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "33",
+            "lugA_LINHA_N": "4",
+            "lugA_COLUNA_N": "12"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "34",
+          "line": 4,
+          "column": 13,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "K 05",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "34",
+            "lugA_LINHA_N": "4",
+            "lugA_COLUNA_N": "13"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "35",
+          "line": 4,
+          "column": 14,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "K 04",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "35",
+            "lugA_LINHA_N": "4",
+            "lugA_COLUNA_N": "14"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "36",
+          "line": 4,
+          "column": 15,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "K 03",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "36",
+            "lugA_LINHA_N": "4",
+            "lugA_COLUNA_N": "15"
+          },
+          "type": "Regular",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "37",
+          "line": 4,
+          "column": 16,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "K 02",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "37",
+            "lugA_LINHA_N": "4",
+            "lugA_COLUNA_N": "16"
+          },
+          "type": "Regular",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "38",
+          "line": 4,
+          "column": 17,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "K 01",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "38",
+            "lugA_LINHA_N": "4",
+            "lugA_COLUNA_N": "17"
+          },
+          "type": "Regular",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        }
+      ]
+    },
+    {
+      "line": 5,
+      "seats": [
+        {
+          "id": "39",
+          "line": 5,
+          "column": 5,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "J 13",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "39",
+            "lugA_LINHA_N": "5",
+            "lugA_COLUNA_N": "5"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "40",
+          "line": 5,
+          "column": 6,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "J 12",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "40",
+            "lugA_LINHA_N": "5",
+            "lugA_COLUNA_N": "6"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "41",
+          "line": 5,
+          "column": 7,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "J 11",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "41",
+            "lugA_LINHA_N": "5",
+            "lugA_COLUNA_N": "7"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "42",
+          "line": 5,
+          "column": 8,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "J 10",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "42",
+            "lugA_LINHA_N": "5",
+            "lugA_COLUNA_N": "8"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "43",
+          "line": 5,
+          "column": 9,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "J 09",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "43",
+            "lugA_LINHA_N": "5",
+            "lugA_COLUNA_N": "9"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "44",
+          "line": 5,
+          "column": 10,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "J 08",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "44",
+            "lugA_LINHA_N": "5",
+            "lugA_COLUNA_N": "10"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "45",
+          "line": 5,
+          "column": 11,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "J 07",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "45",
+            "lugA_LINHA_N": "5",
+            "lugA_COLUNA_N": "11"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "46",
+          "line": 5,
+          "column": 12,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "J 06",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "46",
+            "lugA_LINHA_N": "5",
+            "lugA_COLUNA_N": "12"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "47",
+          "line": 5,
+          "column": 13,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "J 05",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "47",
+            "lugA_LINHA_N": "5",
+            "lugA_COLUNA_N": "13"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "48",
+          "line": 5,
+          "column": 14,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "J 04",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "48",
+            "lugA_LINHA_N": "5",
+            "lugA_COLUNA_N": "14"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "49",
+          "line": 5,
+          "column": 15,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "J 03",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "49",
+            "lugA_LINHA_N": "5",
+            "lugA_COLUNA_N": "15"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "50",
+          "line": 5,
+          "column": 16,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "J 02",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "50",
+            "lugA_LINHA_N": "5",
+            "lugA_COLUNA_N": "16"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "51",
+          "line": 5,
+          "column": 17,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "J 01",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "51",
+            "lugA_LINHA_N": "5",
+            "lugA_COLUNA_N": "17"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        }
+      ]
+    },
+    {
+      "line": 6,
+      "seats": [
+        {
+          "id": "52",
+          "line": 6,
+          "column": 5,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "I 13",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "52",
+            "lugA_LINHA_N": "6",
+            "lugA_COLUNA_N": "5"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "53",
+          "line": 6,
+          "column": 6,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "I 12",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "53",
+            "lugA_LINHA_N": "6",
+            "lugA_COLUNA_N": "6"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "54",
+          "line": 6,
+          "column": 7,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "I 11",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "54",
+            "lugA_LINHA_N": "6",
+            "lugA_COLUNA_N": "7"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "55",
+          "line": 6,
+          "column": 8,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "I 10",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "55",
+            "lugA_LINHA_N": "6",
+            "lugA_COLUNA_N": "8"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "56",
+          "line": 6,
+          "column": 9,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "I 09",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "56",
+            "lugA_LINHA_N": "6",
+            "lugA_COLUNA_N": "9"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "57",
+          "line": 6,
+          "column": 10,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "I 08",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "57",
+            "lugA_LINHA_N": "6",
+            "lugA_COLUNA_N": "10"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "58",
+          "line": 6,
+          "column": 11,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "I 07",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "58",
+            "lugA_LINHA_N": "6",
+            "lugA_COLUNA_N": "11"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "59",
+          "line": 6,
+          "column": 12,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "I 06",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "59",
+            "lugA_LINHA_N": "6",
+            "lugA_COLUNA_N": "12"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "60",
+          "line": 6,
+          "column": 13,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "I 05",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "60",
+            "lugA_LINHA_N": "6",
+            "lugA_COLUNA_N": "13"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "61",
+          "line": 6,
+          "column": 14,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "I 04",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "61",
+            "lugA_LINHA_N": "6",
+            "lugA_COLUNA_N": "14"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "62",
+          "line": 6,
+          "column": 15,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "I 03",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "62",
+            "lugA_LINHA_N": "6",
+            "lugA_COLUNA_N": "15"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "63",
+          "line": 6,
+          "column": 16,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "I 02",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "63",
+            "lugA_LINHA_N": "6",
+            "lugA_COLUNA_N": "16"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "64",
+          "line": 6,
+          "column": 17,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "I 01",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "64",
+            "lugA_LINHA_N": "6",
+            "lugA_COLUNA_N": "17"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        }
+      ]
+    },
+    {
+      "line": 7,
+      "seats": [
+        {
+          "id": "65",
+          "line": 7,
+          "column": 5,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "H 13",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "65",
+            "lugA_LINHA_N": "7",
+            "lugA_COLUNA_N": "5"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "66",
+          "line": 7,
+          "column": 6,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "H 12",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "66",
+            "lugA_LINHA_N": "7",
+            "lugA_COLUNA_N": "6"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "67",
+          "line": 7,
+          "column": 7,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "H 11",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "67",
+            "lugA_LINHA_N": "7",
+            "lugA_COLUNA_N": "7"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "68",
+          "line": 7,
+          "column": 8,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "H 10",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "68",
+            "lugA_LINHA_N": "7",
+            "lugA_COLUNA_N": "8"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "69",
+          "line": 7,
+          "column": 9,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "H 09",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "69",
+            "lugA_LINHA_N": "7",
+            "lugA_COLUNA_N": "9"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "70",
+          "line": 7,
+          "column": 10,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "H 08",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "70",
+            "lugA_LINHA_N": "7",
+            "lugA_COLUNA_N": "10"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "71",
+          "line": 7,
+          "column": 11,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "H 07",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "71",
+            "lugA_LINHA_N": "7",
+            "lugA_COLUNA_N": "11"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "72",
+          "line": 7,
+          "column": 12,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "H 06",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "72",
+            "lugA_LINHA_N": "7",
+            "lugA_COLUNA_N": "12"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "73",
+          "line": 7,
+          "column": 13,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "H 05",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "73",
+            "lugA_LINHA_N": "7",
+            "lugA_COLUNA_N": "13"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "74",
+          "line": 7,
+          "column": 14,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "H 04",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "74",
+            "lugA_LINHA_N": "7",
+            "lugA_COLUNA_N": "14"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "75",
+          "line": 7,
+          "column": 15,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "H 03",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "75",
+            "lugA_LINHA_N": "7",
+            "lugA_COLUNA_N": "15"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "76",
+          "line": 7,
+          "column": 16,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "H 02",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "76",
+            "lugA_LINHA_N": "7",
+            "lugA_COLUNA_N": "16"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "77",
+          "line": 7,
+          "column": 17,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "H 01",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "77",
+            "lugA_LINHA_N": "7",
+            "lugA_COLUNA_N": "17"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        }
+      ]
+    },
+    {
+      "line": 8,
+      "seats": [
+        {
+          "id": "78",
+          "line": 8,
+          "column": 5,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "G 13",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "78",
+            "lugA_LINHA_N": "8",
+            "lugA_COLUNA_N": "5"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "79",
+          "line": 8,
+          "column": 6,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "G 12",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "79",
+            "lugA_LINHA_N": "8",
+            "lugA_COLUNA_N": "6"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "80",
+          "line": 8,
+          "column": 7,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "G 11",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "80",
+            "lugA_LINHA_N": "8",
+            "lugA_COLUNA_N": "7"
+          },
+          "type": "Regular",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "81",
+          "line": 8,
+          "column": 8,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "G 10",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "81",
+            "lugA_LINHA_N": "8",
+            "lugA_COLUNA_N": "8"
+          },
+          "type": "Regular",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "82",
+          "line": 8,
+          "column": 9,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "G 09",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "82",
+            "lugA_LINHA_N": "8",
+            "lugA_COLUNA_N": "9"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "83",
+          "line": 8,
+          "column": 10,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "G 08",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "83",
+            "lugA_LINHA_N": "8",
+            "lugA_COLUNA_N": "10"
+          },
+          "type": "Regular",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "84",
+          "line": 8,
+          "column": 11,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "G 07",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "84",
+            "lugA_LINHA_N": "8",
+            "lugA_COLUNA_N": "11"
+          },
+          "type": "Regular",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "85",
+          "line": 8,
+          "column": 12,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "G 06",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "85",
+            "lugA_LINHA_N": "8",
+            "lugA_COLUNA_N": "12"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "86",
+          "line": 8,
+          "column": 13,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "G 05",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "86",
+            "lugA_LINHA_N": "8",
+            "lugA_COLUNA_N": "13"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "87",
+          "line": 8,
+          "column": 14,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "G 04",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "87",
+            "lugA_LINHA_N": "8",
+            "lugA_COLUNA_N": "14"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "88",
+          "line": 8,
+          "column": 15,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "G 03",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "88",
+            "lugA_LINHA_N": "8",
+            "lugA_COLUNA_N": "15"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "89",
+          "line": 8,
+          "column": 16,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "G 02",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "89",
+            "lugA_LINHA_N": "8",
+            "lugA_COLUNA_N": "16"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "90",
+          "line": 8,
+          "column": 17,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "G 01",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "90",
+            "lugA_LINHA_N": "8",
+            "lugA_COLUNA_N": "17"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        }
+      ]
+    },
+    {
+      "line": 9,
+      "seats": [
+        {
+          "id": "91",
+          "line": 9,
+          "column": 5,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "F 13",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "91",
+            "lugA_LINHA_N": "9",
+            "lugA_COLUNA_N": "5"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "92",
+          "line": 9,
+          "column": 6,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "F 12",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "92",
+            "lugA_LINHA_N": "9",
+            "lugA_COLUNA_N": "6"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "93",
+          "line": 9,
+          "column": 7,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "F 11",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "93",
+            "lugA_LINHA_N": "9",
+            "lugA_COLUNA_N": "7"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "94",
+          "line": 9,
+          "column": 8,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "F 10",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "94",
+            "lugA_LINHA_N": "9",
+            "lugA_COLUNA_N": "8"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "95",
+          "line": 9,
+          "column": 9,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "F 09",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "95",
+            "lugA_LINHA_N": "9",
+            "lugA_COLUNA_N": "9"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "96",
+          "line": 9,
+          "column": 10,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "F 08",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "96",
+            "lugA_LINHA_N": "9",
+            "lugA_COLUNA_N": "10"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "97",
+          "line": 9,
+          "column": 11,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "F 07",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "97",
+            "lugA_LINHA_N": "9",
+            "lugA_COLUNA_N": "11"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "98",
+          "line": 9,
+          "column": 12,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "F 06",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "98",
+            "lugA_LINHA_N": "9",
+            "lugA_COLUNA_N": "12"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "99",
+          "line": 9,
+          "column": 13,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "F 05",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "99",
+            "lugA_LINHA_N": "9",
+            "lugA_COLUNA_N": "13"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "100",
+          "line": 9,
+          "column": 14,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "F 04",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "100",
+            "lugA_LINHA_N": "9",
+            "lugA_COLUNA_N": "14"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "101",
+          "line": 9,
+          "column": 15,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "F 03",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "101",
+            "lugA_LINHA_N": "9",
+            "lugA_COLUNA_N": "15"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "102",
+          "line": 9,
+          "column": 16,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "F 02",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "102",
+            "lugA_LINHA_N": "9",
+            "lugA_COLUNA_N": "16"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "103",
+          "line": 9,
+          "column": 17,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "F 01",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "103",
+            "lugA_LINHA_N": "9",
+            "lugA_COLUNA_N": "17"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        }
+      ]
+    },
+    {
+      "line": 10,
+      "seats": [
+        {
+          "id": "104",
+          "line": 10,
+          "column": 5,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "E 13",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "104",
+            "lugA_LINHA_N": "10",
+            "lugA_COLUNA_N": "5"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "105",
+          "line": 10,
+          "column": 6,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "E 12",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "105",
+            "lugA_LINHA_N": "10",
+            "lugA_COLUNA_N": "6"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "106",
+          "line": 10,
+          "column": 7,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "E 11",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "106",
+            "lugA_LINHA_N": "10",
+            "lugA_COLUNA_N": "7"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "107",
+          "line": 10,
+          "column": 8,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "E 10",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "107",
+            "lugA_LINHA_N": "10",
+            "lugA_COLUNA_N": "8"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "108",
+          "line": 10,
+          "column": 9,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "E 09",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "108",
+            "lugA_LINHA_N": "10",
+            "lugA_COLUNA_N": "9"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "109",
+          "line": 10,
+          "column": 10,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "E 08",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "109",
+            "lugA_LINHA_N": "10",
+            "lugA_COLUNA_N": "10"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "110",
+          "line": 10,
+          "column": 11,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "E 07",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "110",
+            "lugA_LINHA_N": "10",
+            "lugA_COLUNA_N": "11"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "111",
+          "line": 10,
+          "column": 12,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "E 06",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "111",
+            "lugA_LINHA_N": "10",
+            "lugA_COLUNA_N": "12"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "112",
+          "line": 10,
+          "column": 13,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "E 05",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "112",
+            "lugA_LINHA_N": "10",
+            "lugA_COLUNA_N": "13"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "113",
+          "line": 10,
+          "column": 14,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "E 04",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "113",
+            "lugA_LINHA_N": "10",
+            "lugA_COLUNA_N": "14"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "114",
+          "line": 10,
+          "column": 15,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "E 03",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "114",
+            "lugA_LINHA_N": "10",
+            "lugA_COLUNA_N": "15"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "115",
+          "line": 10,
+          "column": 16,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "E 02",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "115",
+            "lugA_LINHA_N": "10",
+            "lugA_COLUNA_N": "16"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "116",
+          "line": 10,
+          "column": 17,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "E 01",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "116",
+            "lugA_LINHA_N": "10",
+            "lugA_COLUNA_N": "17"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        }
+      ]
+    },
+    {
+      "line": 11,
+      "seats": [
+        {
+          "id": "117",
+          "line": 11,
+          "column": 5,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "D 13",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "117",
+            "lugA_LINHA_N": "11",
+            "lugA_COLUNA_N": "5"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "118",
+          "line": 11,
+          "column": 6,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "D 12",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "118",
+            "lugA_LINHA_N": "11",
+            "lugA_COLUNA_N": "6"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "119",
+          "line": 11,
+          "column": 7,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "D 11",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "119",
+            "lugA_LINHA_N": "11",
+            "lugA_COLUNA_N": "7"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "120",
+          "line": 11,
+          "column": 8,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "D 10",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "120",
+            "lugA_LINHA_N": "11",
+            "lugA_COLUNA_N": "8"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "121",
+          "line": 11,
+          "column": 9,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "D 09",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "121",
+            "lugA_LINHA_N": "11",
+            "lugA_COLUNA_N": "9"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "122",
+          "line": 11,
+          "column": 10,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "D 08",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "122",
+            "lugA_LINHA_N": "11",
+            "lugA_COLUNA_N": "10"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "123",
+          "line": 11,
+          "column": 11,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "D 07",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "123",
+            "lugA_LINHA_N": "11",
+            "lugA_COLUNA_N": "11"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "124",
+          "line": 11,
+          "column": 12,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "D 06",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "124",
+            "lugA_LINHA_N": "11",
+            "lugA_COLUNA_N": "12"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "125",
+          "line": 11,
+          "column": 13,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "D 05",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "125",
+            "lugA_LINHA_N": "11",
+            "lugA_COLUNA_N": "13"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "126",
+          "line": 11,
+          "column": 14,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "D 04",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "126",
+            "lugA_LINHA_N": "11",
+            "lugA_COLUNA_N": "14"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "127",
+          "line": 11,
+          "column": 15,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "D 03",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "127",
+            "lugA_LINHA_N": "11",
+            "lugA_COLUNA_N": "15"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "128",
+          "line": 11,
+          "column": 16,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "D 02",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "128",
+            "lugA_LINHA_N": "11",
+            "lugA_COLUNA_N": "16"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "129",
+          "line": 11,
+          "column": 17,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "D 01",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "129",
+            "lugA_LINHA_N": "11",
+            "lugA_COLUNA_N": "17"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        }
+      ]
+    },
+    {
+      "line": 12,
+      "seats": [
+        {
+          "id": "130",
+          "line": 12,
+          "column": 5,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "C 13",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "130",
+            "lugA_LINHA_N": "12",
+            "lugA_COLUNA_N": "5"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "131",
+          "line": 12,
+          "column": 6,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "C 12",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "131",
+            "lugA_LINHA_N": "12",
+            "lugA_COLUNA_N": "6"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "132",
+          "line": 12,
+          "column": 7,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "C 11",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "132",
+            "lugA_LINHA_N": "12",
+            "lugA_COLUNA_N": "7"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "133",
+          "line": 12,
+          "column": 8,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "C 10",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "133",
+            "lugA_LINHA_N": "12",
+            "lugA_COLUNA_N": "8"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "134",
+          "line": 12,
+          "column": 9,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "C 09",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "134",
+            "lugA_LINHA_N": "12",
+            "lugA_COLUNA_N": "9"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "135",
+          "line": 12,
+          "column": 10,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "C 08",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "135",
+            "lugA_LINHA_N": "12",
+            "lugA_COLUNA_N": "10"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "136",
+          "line": 12,
+          "column": 11,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "C 07",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "136",
+            "lugA_LINHA_N": "12",
+            "lugA_COLUNA_N": "11"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "137",
+          "line": 12,
+          "column": 12,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "C 06",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "137",
+            "lugA_LINHA_N": "12",
+            "lugA_COLUNA_N": "12"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "138",
+          "line": 12,
+          "column": 13,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "C 05",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "138",
+            "lugA_LINHA_N": "12",
+            "lugA_COLUNA_N": "13"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "139",
+          "line": 12,
+          "column": 14,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "C 04",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "139",
+            "lugA_LINHA_N": "12",
+            "lugA_COLUNA_N": "14"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "140",
+          "line": 12,
+          "column": 15,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "C 03",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "140",
+            "lugA_LINHA_N": "12",
+            "lugA_COLUNA_N": "15"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "141",
+          "line": 12,
+          "column": 16,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "C 02",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "141",
+            "lugA_LINHA_N": "12",
+            "lugA_COLUNA_N": "16"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "142",
+          "line": 12,
+          "column": 17,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "C 01",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "142",
+            "lugA_LINHA_N": "12",
+            "lugA_COLUNA_N": "17"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        }
+      ]
+    },
+    {
+      "line": 13,
+      "seats": [
+        {
+          "id": "143",
+          "line": 13,
+          "column": 5,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "B 13",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "143",
+            "lugA_LINHA_N": "13",
+            "lugA_COLUNA_N": "5"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "144",
+          "line": 13,
+          "column": 6,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "B 12",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "144",
+            "lugA_LINHA_N": "13",
+            "lugA_COLUNA_N": "6"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "145",
+          "line": 13,
+          "column": 7,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "B 11",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "145",
+            "lugA_LINHA_N": "13",
+            "lugA_COLUNA_N": "7"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "146",
+          "line": 13,
+          "column": 8,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "B 10",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "146",
+            "lugA_LINHA_N": "13",
+            "lugA_COLUNA_N": "8"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "147",
+          "line": 13,
+          "column": 9,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "B 09",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "147",
+            "lugA_LINHA_N": "13",
+            "lugA_COLUNA_N": "9"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "148",
+          "line": 13,
+          "column": 10,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "B 08",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "148",
+            "lugA_LINHA_N": "13",
+            "lugA_COLUNA_N": "10"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "149",
+          "line": 13,
+          "column": 11,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "B 07",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "149",
+            "lugA_LINHA_N": "13",
+            "lugA_COLUNA_N": "11"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "150",
+          "line": 13,
+          "column": 12,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "B 06",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "150",
+            "lugA_LINHA_N": "13",
+            "lugA_COLUNA_N": "12"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "151",
+          "line": 13,
+          "column": 13,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "B 05",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "151",
+            "lugA_LINHA_N": "13",
+            "lugA_COLUNA_N": "13"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "152",
+          "line": 13,
+          "column": 14,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "B 04",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "152",
+            "lugA_LINHA_N": "13",
+            "lugA_COLUNA_N": "14"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "153",
+          "line": 13,
+          "column": 15,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "B 03",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "153",
+            "lugA_LINHA_N": "13",
+            "lugA_COLUNA_N": "15"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "154",
+          "line": 13,
+          "column": 16,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "B 02",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "154",
+            "lugA_LINHA_N": "13",
+            "lugA_COLUNA_N": "16"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "155",
+          "line": 13,
+          "column": 17,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "B 01",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "155",
+            "lugA_LINHA_N": "13",
+            "lugA_COLUNA_N": "17"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        }
+      ]
+    },
+    {
+      "line": 14,
+      "seats": [
+        {
+          "id": "156",
+          "line": 14,
+          "column": 5,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "A 10",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "156",
+            "lugA_LINHA_N": "14",
+            "lugA_COLUNA_N": "5"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "157",
+          "line": 14,
+          "column": 6,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "A 09",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "157",
+            "lugA_LINHA_N": "14",
+            "lugA_COLUNA_N": "6"
+          },
+          "type": "Regular",
+          "status": "Available",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "158",
+          "line": 14,
+          "column": 7,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "A 08",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "158",
+            "lugA_LINHA_N": "14",
+            "lugA_COLUNA_N": "7"
+          },
+          "type": "Regular",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "159",
+          "line": 14,
+          "column": 9,
+          "locationId": "00000347",
+          "positionType": "D",
+          "label": "A 07",
+          "positionSubType": "D000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Cadeirante",
+          "procId": {
+            "lugA_POSLUGREAL_N": "159",
+            "lugA_LINHA_N": "14",
+            "lugA_COLUNA_N": "9"
+          },
+          "type": "Disability",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "160",
+          "line": 14,
+          "column": 10,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "A 06",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "160",
+            "lugA_LINHA_N": "14",
+            "lugA_COLUNA_N": "10"
+          },
+          "type": "Regular",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "161",
+          "line": 14,
+          "column": 12,
+          "locationId": "00000347",
+          "positionType": "D",
+          "label": "A 05",
+          "positionSubType": "D000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Cadeirante",
+          "procId": {
+            "lugA_POSLUGREAL_N": "161",
+            "lugA_LINHA_N": "14",
+            "lugA_COLUNA_N": "12"
+          },
+          "type": "Disability",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "162",
+          "line": 14,
+          "column": 13,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "A 04",
+          "positionSubType": "N000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Normal",
+          "procId": {
+            "lugA_POSLUGREAL_N": "162",
+            "lugA_LINHA_N": "14",
+            "lugA_COLUNA_N": "13"
+          },
+          "type": "Regular",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "163",
+          "line": 14,
+          "column": 14,
+          "locationId": "00000347",
+          "positionType": "D",
+          "label": "A 03",
+          "positionSubType": "D000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Cadeirante",
+          "procId": {
+            "lugA_POSLUGREAL_N": "163",
+            "lugA_LINHA_N": "14",
+            "lugA_COLUNA_N": "14"
+          },
+          "type": "Disability",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "164",
+          "line": 14,
+          "column": 15,
+          "locationId": "00000347",
+          "positionType": "C",
+          "label": "A 02",
+          "positionSubType": "O180",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Obeso",
+          "procId": {
+            "lugA_POSLUGREAL_N": "164",
+            "lugA_LINHA_N": "14",
+            "lugA_COLUNA_N": "15"
+          },
+          "type": "Obese",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        },
+        {
+          "id": "165",
+          "line": 14,
+          "column": 16,
+          "locationId": "00000347",
+          "positionType": "D",
+          "label": "A 01",
+          "positionSubType": "D000",
+          "lineCount": "18",
+          "columnCount": "19",
+          "typeDescription": "Cadeirante",
+          "procId": {
+            "lugA_POSLUGREAL_N": "165",
+            "lugA_LINHA_N": "14",
+            "lugA_COLUNA_N": "16"
+          },
+          "type": "Disability",
+          "status": "Occupied",
+          "areaNumber": 0,
+          "rowIndex": 0
+        }
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "label": "M",
+      "line": 2,
+      "column": 2
+    },
+    {
+      "label": "L",
+      "line": 3,
+      "column": 2
+    },
+    {
+      "label": "K",
+      "line": 4,
+      "column": 2
+    },
+    {
+      "label": "J",
+      "line": 5,
+      "column": 2
+    },
+    {
+      "label": "I",
+      "line": 6,
+      "column": 2
+    },
+    {
+      "label": "H",
+      "line": 7,
+      "column": 2
+    },
+    {
+      "label": "G",
+      "line": 8,
+      "column": 2
+    },
+    {
+      "label": "F",
+      "line": 9,
+      "column": 2
+    },
+    {
+      "label": "E",
+      "line": 10,
+      "column": 2
+    },
+    {
+      "label": "D",
+      "line": 11,
+      "column": 2
+    },
+    {
+      "label": "C",
+      "line": 12,
+      "column": 2
+    },
+    {
+      "label": "B",
+      "line": 13,
+      "column": 2
+    },
+    {
+      "label": "A",
+      "line": 14,
+      "column": 2
+    },
+    {
+      "label": "T",
+      "line": 16,
+      "column": 8
+    }
+  ],
+  "bounds": {
+    "lines": 17,
+    "columns": 19
+  },
+  "stage": {
+    "upperLeft": {
+      "line": 16,
+      "column": 4
+    },
+    "lowerRight": {
+      "line": 17,
+      "column": 17
+    }
+  },
+  "activeReservations": 0
+}
