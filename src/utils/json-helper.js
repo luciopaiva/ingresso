@@ -1,23 +1,21 @@
 
 const
-    chalk = require("chalk");
-    request = require("request-promise-native");
+    chalk = require("chalk"),
+    fetch = require("node-fetch");
 
 /**
  * @param {String} url
  * @return {Promise<*>} array of movie descriptions
  */
 async function getJson(url) {
-    return await request({
-        url: url,
-        transform: (body, response) => {
-            if (response.statusCode !== 200) {
-                console.error(chalk.red(`Error fetching JSON at ${url}. Response status was ${response.statusCode}.`));
-                process.exit(1);
-            }
-            return JSON.parse(body);
-        }
-    })
+    const response = await fetch(url);
+    if (response.ok) {
+        return response.json();
+    } else {
+        console.error(chalk.red(`Error fetching JSON at ${url}. Response status was ${response.status} ` +
+            `(message: ${response.statusText}).`));
+        process.exit(1);
+    }
 }
 
 module.exports = {
