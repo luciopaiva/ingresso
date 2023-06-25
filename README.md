@@ -4,6 +4,8 @@
 
 Check live movie session seat maps right from you terminal window with this cool app.
 
+**Note: it's been a long time since this code base was last maintained and the script is breaking after selecting the movie date. I don't plan on fixing this any time soon, but please feel free to read and learn from it (and maybe fix it? :tongue:).**
+
 ## How to install
 
 Since this is a Node.js application, you need it installed before continuing. Refer to https://nodejs.org for details. This has been tested with Node.js v9 and v10, but it should work just fine with v7.6 or higher (which brought async/await support), although I'm not totally sure.
