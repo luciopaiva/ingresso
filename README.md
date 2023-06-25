@@ -4,7 +4,7 @@
 
 Check live movie session seat maps right from you terminal window with this cool app.
 
-**Note: it's been a long time since this code base was last maintained and the script is breaking after selecting the movie date. I don't plan on fixing this any time soon, but please feel free to read and learn from it (and maybe fix it? :tongue:).**
+**Note: it's been a long time since this code base was last maintained and the script is breaking after selecting the movie date. I don't plan on fixing this any time soon, but please feel free to read and learn from it (and maybe fix it? 😛).**
 
 ## How to install
 
